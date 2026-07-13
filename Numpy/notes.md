@@ -327,3 +327,130 @@ Used to visualize numerical data.
 - Broadcasting
 - Vectorization
 - Iteration
+
+# Broadcasting
+
+Broadcasting is a NumPy feature that allows arithmetic operations on arrays of different shapes without explicitly reshaping them.
+
+### Advantages
+- Faster computations
+- Less memory usage
+- Eliminates unnecessary loops
+- Makes code cleaner and more readable
+
+### Example
+
+```python
+import numpy as np
+
+arr = np.array([1, 2, 3])
+
+print(arr + 5)
+# Output: [6 7 8]
+```
+
+### Broadcasting Between Arrays
+
+```python
+a = np.array([[1], [2], [3]])
+b = np.array([10, 20, 30])
+
+print(a + b)
+```
+
+Output
+
+```
+[[11 21 31]
+ [12 22 32]
+ [13 23 33]]
+```
+
+---
+
+# Vectorization
+
+Vectorization means performing operations on an entire array at once instead of using Python loops.
+
+### Advantages
+
+- High Performance
+- Cleaner Code
+- Optimized Memory Usage
+- Essential for Machine Learning
+
+### Example
+
+```python
+arr = np.array([1,2,3,4,5])
+
+print(arr * 2)
+```
+
+Output
+
+```
+[2 4 6 8 10]
+```
+
+---
+
+# Universal Functions (ufuncs)
+
+NumPy provides built-in mathematical functions that operate element-wise.
+
+### Common Universal Functions
+
+```python
+np.sqrt()
+np.sin()
+np.cos()
+np.tan()
+np.log()
+np.exp()
+np.abs()
+```
+
+### Example
+
+```python
+arr = np.array([1,4,9,16])
+
+print(np.sqrt(arr))
+```
+
+Output
+
+```
+[1. 2. 3. 4.]
+```
+
+---
+
+# Boolean Filtering
+
+Boolean conditions can be used to filter array elements.
+
+Example
+
+```python
+arr = np.array([10,20,30,40,50])
+
+print(arr[arr > 25])
+```
+
+Output
+
+```
+[30 40 50]
+```
+
+---
+
+# Key Learnings
+
+- Broadcasting performs operations on arrays with compatible shapes.
+- Vectorization replaces loops with efficient array operations.
+- Universal Functions perform fast mathematical computations.
+- Boolean Filtering helps select data based on conditions.
+- These concepts are widely used in Data Science, Machine Learning, and Deep Learning.
