@@ -454,3 +454,155 @@ Output
 - Universal Functions perform fast mathematical computations.
 - Boolean Filtering helps select data based on conditions.
 - These concepts are widely used in Data Science, Machine Learning, and Deep Learning.
+
+# Stacking
+
+Stacking combines two or more arrays into a single array.
+
+## Vertical Stacking
+
+- Uses `np.vstack()`
+- Combines arrays row-wise.
+
+Example:
+
+```python
+np.vstack((a, b))
+```
+
+## Horizontal Stacking
+
+- Uses `np.hstack()`
+- Combines arrays column-wise.
+
+Example:
+
+```python
+np.hstack((a, b))
+```
+
+---
+
+# Splitting Arrays
+
+Splitting divides a large array into smaller arrays.
+
+Function:
+
+```python
+np.split(array, sections)
+```
+
+Example:
+
+```python
+arr = np.arange(1,13)
+
+np.split(arr,3)
+```
+
+Output:
+
+```
+[array([1,2,3,4]),
+ array([5,6,7,8]),
+ array([9,10,11,12])]
+```
+
+---
+
+# Sorting Arrays
+
+Sorting arranges elements in ascending order.
+
+Function:
+
+```python
+np.sort()
+```
+
+Example:
+
+```python
+marks = np.array([78,45,99,32,67])
+
+np.sort(marks)
+```
+
+Output:
+
+```
+[32 45 67 78 99]
+```
+
+---
+
+# Searching Elements
+
+The `np.where()` function returns the index of elements that satisfy a condition.
+
+Example:
+
+```python
+marks = np.array([78,45,99,32,67])
+
+np.where(marks == 67)
+```
+
+Output:
+
+```
+(array([4]),)
+```
+
+---
+
+# Unique Values
+
+`np.unique()` returns all unique elements from an array.
+
+Example:
+
+```python
+arr = np.array([1,2,2,3,4,4,5])
+
+np.unique(arr)
+```
+
+Output:
+
+```
+[1 2 3 4 5]
+```
+
+---
+
+# Count Non-Zero Elements
+
+`np.count_nonzero()` counts all non-zero values.
+
+Example:
+
+```python
+arr = np.array([0,1,2,0,3,0,4])
+
+np.count_nonzero(arr)
+```
+
+Output:
+
+```
+4
+```
+
+---
+
+# Key Learnings
+
+- Combined arrays using vertical and horizontal stacking.
+- Split arrays into multiple equal parts.
+- Sorted arrays efficiently using `np.sort()`.
+- Located elements using `np.where()`.
+- Extracted unique values using `np.unique()`.
+- Counted non-zero elements with `np.count_nonzero()`.
+- These operations are commonly used in data preprocessing and machine learning workflows.
