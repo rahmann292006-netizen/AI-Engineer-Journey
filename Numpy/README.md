@@ -1,60 +1,44 @@
 # NumPy Journey
 
-This folder documents my hands-on learning journey with NumPy. It includes notes, practical examples, and exercises covering the core concepts required for Machine Learning and Data Science.
+This folder documents my complete NumPy learning journey through hands-on practice, notes, and real coding exercises.
 
 ## 📚 Topics Covered
 
-### ✅ Fundamentals
-- Array Creation (`array`, `arange`, `linspace`)
-- Arrays with `ones`, `zeros`, `identity`
-- Random Arrays
-- Array Properties (`shape`, `size`, `dtype`, `ndim`, `itemsize`)
-- Data Type Conversion (`astype`)
-- Reshaping Arrays
-
-### ✅ Mathematical Operations
-- Arithmetic Operations
-- Aggregate Functions
-  - `sum()`
-  - `mean()`
-  - `max()`
-  - `min()`
-  - `median()`
-  - `std()`
-  - `var()`
-  - `prod()`
-
-### ✅ Matrix Operations
-- Matrix Multiplication (`np.dot()`)
-
-### ✅ Data Visualization
-- Basic plotting with Matplotlib
-
-### ✅ Indexing & Slicing
-- Basic Indexing
-- Array Slicing
-- Fancy Indexing
+- Array Creation
+- Array Properties
+- Array Reshaping
+- Mathematical Operations
+- Statistical Functions
+- Matrix Operations
+- Indexing
+- Slicing
 - Boolean Masking
-- Array Iteration
-
----
+- Fancy Indexing
+- Broadcasting
+- Vectorization
+- Universal Functions (ufuncs)
+- Stacking & Splitting
+- Sorting & Searching
+- Linear Algebra
 
 ## 📂 Files
 
-- **notes.md** → Theory and revision notes
-- **numpy_hands_on.ipynb** → Hands-on practice and code examples
+- **numpy_hands_on.ipynb** → Hands-on practice and examples
+- **notes.md** → Concept notes and explanations
 
----
+## 🎯 Learning Outcome
 
-## 🚀 Upcoming Topics
+After completing this journey, I can confidently:
 
-- Broadcasting
-- Vectorization
-- Stacking & Splitting
-- Linear Algebra
-- Random Module
-- NumPy Interview Questions
+- Create and manipulate NumPy arrays
+- Perform mathematical and statistical computations
+- Apply indexing and slicing techniques
+- Use broadcasting and vectorization efficiently
+- Work with sorting, searching, and stacking operations
+- Solve basic linear algebra problems using NumPy
 
----
+## 🚀 Status
 
-**Status:** 🟢 In Progress
+✅ NumPy Fundamentals Completed
+
+Next: **Pandas Documentation & Data Visualization with Matplotlib**
