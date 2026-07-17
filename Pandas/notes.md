@@ -95,3 +95,99 @@ Next:
 - Data Selection
 - Indexing
 - Filtering
+
+---
+
+# Day 8 - Indexing, Selection & Filtering
+
+## Selecting Columns
+
+Select a single column:
+
+```python
+df["Name"]
+```
+
+Select multiple columns:
+
+```python
+df[["Name", "Age"]]
+```
+
+---
+
+## Selecting Rows
+
+Select rows using slicing:
+
+```python
+df[0:5]
+```
+
+---
+
+## loc[]
+
+`loc[]` selects data using labels.
+
+Example:
+
+```python
+df.loc[0]
+df.loc[0:3]
+```
+
+---
+
+## iloc[]
+
+`iloc[]` selects data using integer positions.
+
+Example:
+
+```python
+df.iloc[0]
+df.iloc[0:3]
+```
+
+---
+
+## Filtering Data
+
+Example:
+
+```python
+df[df["Age"] > 20]
+```
+
+Multiple conditions:
+
+```python
+df[(df["Age"] > 20) & (df["Marks"] > 80)]
+```
+
+---
+
+## Sorting
+
+Ascending:
+
+```python
+df.sort_values("Marks")
+```
+
+Descending:
+
+```python
+df.sort_values("Marks", ascending=False)
+```
+
+---
+
+# Key Learnings
+
+- Selected rows and columns efficiently.
+- Used `loc[]` and `iloc[]` for indexing.
+- Filtered data using logical conditions.
+- Sorted datasets based on column values.
+- Learned essential data selection techniques used in real-world analysis.
