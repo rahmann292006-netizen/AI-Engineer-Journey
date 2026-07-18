@@ -191,3 +191,96 @@ df.sort_values("Marks", ascending=False)
 - Filtered data using logical conditions.
 - Sorted datasets based on column values.
 - Learned essential data selection techniques used in real-world analysis.
+
+---
+
+# Day 9 - Handling Missing Values & Data Cleaning
+
+## Missing Values
+
+Missing values occur when data is incomplete or unavailable.
+
+Check missing values:
+
+```python
+df.isnull()
+```
+
+Count missing values:
+
+```python
+df.isnull().sum()
+```
+
+---
+
+## Dropping Missing Values
+
+Remove rows with missing values:
+
+```python
+df.dropna()
+```
+
+Remove columns with missing values:
+
+```python
+df.dropna(axis=1)
+```
+
+---
+
+## Filling Missing Values
+
+Fill with a constant value:
+
+```python
+df.fillna(0)
+```
+
+Fill using mean:
+
+```python
+df["Marks"] = df["Marks"].fillna(df["Marks"].mean())
+```
+
+Fill using median:
+
+```python
+df["Marks"] = df["Marks"].fillna(df["Marks"].median())
+```
+
+---
+
+## Duplicate Values
+
+Check duplicates:
+
+```python
+df.duplicated()
+```
+
+Remove duplicates:
+
+```python
+df.drop_duplicates()
+```
+
+---
+
+## Rename Columns
+
+```python
+df.rename(columns={"Marks":"Score"})
+```
+
+---
+
+## Key Learnings
+
+- Identified missing values.
+- Removed missing values using `dropna()`.
+- Filled missing values using `fillna()`.
+- Detected and removed duplicate rows.
+- Renamed columns for better readability.
+- Learned basic data cleaning techniques used before Machine Learning.
