@@ -284,3 +284,229 @@ df.rename(columns={"Marks":"Score"})
 - Detected and removed duplicate rows.
 - Renamed columns for better readability.
 - Learned basic data cleaning techniques used before Machine Learning.
+
+---
+
+# Day 10 - Data Transformation using Pandas
+
+## apply()
+
+The `apply()` function applies a custom function to rows or columns.
+
+```python
+df["Salary"] = df["Salary"].apply(lambda x: x + 5000)
+```
+
+---
+
+## map()
+
+Used to map existing values to new values.
+
+```python
+df["Gender"] = df["Gender"].map({
+    "M":"Male",
+    "F":"Female"
+})
+```
+
+---
+
+## replace()
+
+Replaces existing values.
+
+```python
+df["City"] = df["City"].replace({
+    "BLR":"Bangalore",
+    "HYD":"Hyderabad"
+})
+```
+
+---
+
+## String Operations
+
+Common string methods:
+
+```python
+df["Name"].str.upper()
+df["Name"].str.lower()
+df["Name"].str.len()
+df["Name"].str.title()
+```
+
+---
+
+## Creating New Columns
+
+```python
+df["Bonus"] = df["Salary"] * 0.10
+```
+
+---
+
+## Key Learnings
+
+- Learned to transform data using `apply()`.
+- Mapped categorical values with `map()`.
+- Replaced values using `replace()`.
+- Performed string operations.
+- Created new columns from existing data.
+- Understood real-world data preprocessing techniques.
+
+---
+
+---
+
+# Day 11 - GroupBy Fundamentals
+
+## What is GroupBy?
+
+GroupBy follows the **Split → Apply → Combine** strategy.
+
+It groups rows based on common values and performs calculations on each group.
+
+---
+
+## Creating Groups
+
+```python
+df.groupby("Department")
+```
+
+---
+
+## Common Aggregations
+
+### Count
+
+```python
+df.groupby("Department")["Salary"].count()
+```
+
+### Sum
+
+```python
+df.groupby("Department")["Salary"].sum()
+```
+
+### Mean
+
+```python
+df.groupby("Department")["Salary"].mean()
+```
+
+### Maximum
+
+```python
+df.groupby("Department")["Salary"].max()
+```
+
+### Minimum
+
+```python
+df.groupby("Department")["Salary"].min()
+```
+
+### Size
+
+```python
+df.groupby("Department").size()
+```
+
+---
+
+## Applications
+
+- Department-wise salary analysis
+- Sales reports
+- Student marks analysis
+- Customer segmentation
+
+---
+
+## Key Learnings
+
+- Understood Split → Apply → Combine.
+- Learned grouping using `groupby()`.
+- Applied aggregation functions.
+- Performed grouped data analysis.
+- Learned why GroupBy is one of the most important features in Pandas.
+
+---
+
+---
+
+# Day 12 - Advanced GroupBy Operations
+
+## agg()
+
+Performs multiple aggregation functions simultaneously.
+
+```python
+df.groupby("Department").agg({
+    "Salary":["mean","max","min","sum"],
+    "Experience":["mean","max"]
+})
+```
+
+---
+
+## describe()
+
+Provides statistical summary for each group.
+
+```python
+df.groupby("Department").describe()
+```
+
+---
+
+## get_group()
+
+Returns a specific group.
+
+```python
+df.groupby("Department").get_group("IT")
+```
+
+---
+
+## Iterating Through Groups
+
+```python
+for dept, group in df.groupby("Department"):
+    print(dept)
+    print(group)
+```
+
+---
+
+## Multiple Column Grouping
+
+```python
+df.groupby(["Department","Gender"]).mean()
+```
+
+---
+
+## Advantages
+
+- Flexible data analysis.
+- Multiple statistics in one step.
+- Better insights from grouped datasets.
+- Useful for Exploratory Data Analysis (EDA).
+
+---
+
+## Key Learnings
+
+- Learned advanced aggregation using `agg()`.
+- Generated statistical summaries with `describe()`.
+- Retrieved specific groups using `get_group()`.
+- Iterated through grouped data.
+- Performed grouping using multiple columns.
+- Built a stronger foundation for real-world data analysis.
+
+---
