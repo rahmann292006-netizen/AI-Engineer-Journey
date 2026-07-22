@@ -510,3 +510,20 @@ df.groupby(["Department","Gender"]).mean()
 - Built a stronger foundation for real-world data analysis.
 
 ---
+## Day 13
+
+### Topics Covered
+
+- Concatenation
+- Merge
+- Join
+- Inner Join
+- Left Join
+- Right Join
+- Outer Join
+
+### Key Learnings
+
+- Combined multiple datasets.
+- Understood different join strategies.
+- Learned how relational data is handled in Pandas.
