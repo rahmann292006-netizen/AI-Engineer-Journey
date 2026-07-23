@@ -527,3 +527,118 @@ df.groupby(["Department","Gender"]).mean()
 - Combined multiple datasets.
 - Understood different join strategies.
 - Learned how relational data is handled in Pandas.
+
+# Day 14 - Pivot Tables, Crosstab & MultiIndex
+
+## What is a Pivot Table?
+
+A Pivot Table is used to summarize and aggregate large datasets by grouping data based on one or more columns.
+
+It helps in:
+- Summarizing numerical data
+- Finding averages
+- Calculating totals
+- Comparing categories
+
+Example:
+
+```python
+df.pivot_table(values="Salary",
+               index="Department",
+               columns="City",
+               aggfunc="mean")
+```
+
+---
+
+## Parameters
+
+values
+Column to aggregate.
+
+index
+Rows of the pivot table.
+
+columns
+Columns of the pivot table.
+
+aggfunc
+Aggregation function.
+
+Common aggregation functions:
+
+- mean
+- sum
+- count
+- min
+- max
+- median
+
+---
+
+## Crosstab
+
+Crosstab is used to calculate the frequency between two categorical variables.
+
+Syntax:
+
+```python
+pd.crosstab(df["Department"], df["Gender"])
+```
+
+Useful in:
+
+- Frequency Analysis
+- Data Analysis
+- Classification Problems
+
+---
+
+## MultiIndex
+
+MultiIndex allows multiple index levels in a DataFrame.
+
+Example:
+
+```python
+df.set_index(["Department","City"])
+```
+
+Access values:
+
+```python
+df.loc[("IT","Bangalore")]
+```
+
+Reset index:
+
+```python
+df.reset_index()
+```
+
+---
+
+# Key Learnings
+
+- Learned Pivot Tables
+- Used aggregation functions
+- Created Crosstabs
+- Worked with MultiIndex
+- Accessed hierarchical data
+- Reset MultiIndex
+- Understood real-world data summarization
+
+---
+
+# Day 14 Status
+
+✅ Pivot Tables Completed
+
+✅ Crosstab Completed
+
+✅ MultiIndex Completed
+
+Next:
+- GroupBy Advanced
+- Window Functions
+- Time Series Basics
