@@ -642,3 +642,90 @@ Next:
 - GroupBy Advanced
 - Window Functions
 - Time Series Basics
+
+# Day 15 - Advanced GroupBy, Transform & Filter
+
+## What is GroupBy?
+
+GroupBy is used to split data into groups, perform operations on each group, and combine the results.
+
+Syntax:
+
+```python
+df.groupby("Department")
+```
+
+---
+
+## Multiple Aggregations
+
+Apply multiple functions together.
+
+Example:
+
+```python
+df.groupby("Department")["Salary"].agg(["mean","sum","min","max","count"])
+```
+
+---
+
+## Transform()
+
+transform() returns the same number of rows as the original DataFrame.
+
+Example:
+
+```python
+df["Average Salary"] = df.groupby("Department")["Salary"].transform("mean")
+```
+
+Useful for:
+- Feature Engineering
+- Data Preprocessing
+- Machine Learning
+
+---
+
+## Filter()
+
+Filter groups based on a condition.
+
+Example:
+
+```python
+df.groupby("Department").filter(lambda x: x["Salary"].mean() > 50000)
+```
+
+---
+
+## Difference between agg() and transform()
+
+agg()
+- Returns summarized values.
+- Number of rows decreases.
+
+transform()
+- Returns same number of rows.
+- Used to create new columns.
+
+---
+
+# Key Learnings
+
+- Advanced GroupBy
+- Multiple Aggregations
+- transform()
+- filter()
+- Feature Engineering
+- Group-based Analysis
+
+---
+
+# Day 15 Status
+
+✅ Advanced GroupBy Completed
+
+Next:
+- DateTime Handling
+- Time Series
+- Rolling & Expanding Windows
