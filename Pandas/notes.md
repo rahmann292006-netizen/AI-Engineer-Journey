@@ -729,3 +729,91 @@ Next:
 - DateTime Handling
 - Time Series
 - Rolling & Expanding Windows
+
+# Day 16 - DateTime Handling in Pandas
+
+## Why DateTime?
+
+Date and time data is everywhere in real-world datasets.
+
+Examples:
+- Sales Reports
+- Weather Data
+- Attendance Records
+- Stock Market
+- Banking Transactions
+
+Pandas provides powerful DateTime utilities for extracting, analyzing, and manipulating time-based data.
+
+---
+
+## Convert Strings to DateTime
+
+```python
+df["Date"] = pd.to_datetime(df["Date"])
+```
+
+---
+
+## Extract Date Components
+
+Year
+
+```python
+df["Date"].dt.year
+```
+
+Month
+
+```python
+df["Date"].dt.month
+```
+
+Day
+
+```python
+df["Date"].dt.day
+```
+
+Weekday
+
+```python
+df["Date"].dt.day_name()
+```
+
+---
+
+## Sort by Date
+
+```python
+df.sort_values("Date")
+```
+
+---
+
+## Calculate Date Difference
+
+```python
+df["Days"] = (df["End"] - df["Start"]).dt.days
+```
+
+---
+
+# Key Learnings
+
+- DateTime Conversion
+- Extracting Year, Month & Day
+- Weekday Extraction
+- Date Sorting
+- Date Difference Calculation
+
+---
+
+# Day 16 Status
+
+✅ DateTime Handling Completed
+
+Next:
+- Time Series Analysis
+- Rolling Window
+- Expanding Window
