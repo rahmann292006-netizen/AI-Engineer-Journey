@@ -66,3 +66,119 @@ This repository is part of my **AI Engineer Learning Journey**, where I document
 - Seaborn
 - Scikit-learn
 - Machine Learning
+
+# Day 17 - DataFrame Selection, Indexing & Filtering
+
+## Selecting Columns
+
+Select a single column:
+
+```python
+df["batter"]
+```
+
+Select multiple columns:
+
+```python
+df[["batter", "batsman_runs"]]
+```
+
+---
+
+## Selecting Rows
+
+First 5 rows
+
+```python
+df[0:5]
+```
+
+Rows 10 to 20
+
+```python
+df[10:21]
+```
+
+---
+
+## loc[]
+
+Used for label-based indexing.
+
+Examples:
+
+```python
+df.loc[0]
+df.loc[0:5]
+```
+
+Select rows and columns:
+
+```python
+df.loc[0:5, ["batter", "batsman_runs"]]
+```
+
+---
+
+## iloc[]
+
+Used for integer position indexing.
+
+```python
+df.iloc[0]
+```
+
+```python
+df.iloc[0:5]
+```
+
+```python
+df.iloc[0:5, 0:2]
+```
+
+---
+
+## Filtering Data
+
+Runs greater than 50
+
+```python
+df[df["batsman_runs"] > 50]
+```
+
+Runs greater than 20
+
+```python
+df[df["batsman_runs"] > 20]
+```
+
+---
+
+## Multiple Conditions
+
+```python
+df[(df["batsman_runs"] > 20) & (df["ID"] > 100)]
+```
+
+---
+
+# Key Learnings
+
+- Selecting rows
+- Selecting columns
+- loc[]
+- iloc[]
+- Boolean Filtering
+- Multiple Conditions
+
+---
+
+# Day 17 Status
+
+✅ DataFrame Selection & Filtering Completed
+
+Next:
+- Sorting
+- Renaming Columns
+- Value Counts
+- Unique Values
