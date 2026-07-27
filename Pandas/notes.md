@@ -817,3 +817,235 @@ Next:
 - Time Series Analysis
 - Rolling Window
 - Expanding Window
+
+# Day 17 - DataFrame Selection, Indexing & Filtering
+
+## Selecting Columns
+
+Select a single column:
+
+```python
+df["batter"]
+```
+
+Select multiple columns:
+
+```python
+df[["batter", "batsman_runs"]]
+```
+
+---
+
+## Selecting Rows
+
+First 5 rows
+
+```python
+df[0:5]
+```
+
+Rows 10 to 20
+
+```python
+df[10:21]
+```
+
+---
+
+## loc[]
+
+Used for label-based indexing.
+
+Examples:
+
+```python
+df.loc[0]
+df.loc[0:5]
+```
+
+Select rows and columns:
+
+```python
+df.loc[0:5, ["batter", "batsman_runs"]]
+```
+
+---
+
+## iloc[]
+
+Used for integer position indexing.
+
+```python
+df.iloc[0]
+```
+
+```python
+df.iloc[0:5]
+```
+
+```python
+df.iloc[0:5, 0:2]
+```
+
+---
+
+## Filtering Data
+
+Runs greater than 50
+
+```python
+df[df["batsman_runs"] > 50]
+```
+
+Runs greater than 20
+
+```python
+df[df["batsman_runs"] > 20]
+```
+
+---
+
+## Multiple Conditions
+
+```python
+df[(df["batsman_runs"] > 20) & (df["ID"] > 100)]
+```
+
+---
+
+# Key Learnings
+
+- Selecting rows
+- Selecting columns
+- loc[]
+- iloc[]
+- Boolean Filtering
+- Multiple Conditions
+
+---
+
+# Day 17 Status
+
+✅ DataFrame Selection & Filtering Completed
+
+Next:
+- Sorting
+- Renaming Columns
+- Value Counts
+- Unique Values
+
+# Day 18 - Sorting, Unique Values & Descriptive Statistics
+
+## Sorting Data
+
+Ascending Order
+
+```python
+df.sort_values("batsman_runs")
+```
+
+Descending Order
+
+```python
+df.sort_values("batsman_runs", ascending=False)
+```
+
+---
+
+## Unique Values
+
+Find unique values
+
+```python
+df["batter"].unique()
+```
+
+Count unique values
+
+```python
+df["batter"].nunique()
+```
+
+---
+
+## Value Counts
+
+Frequency of values
+
+```python
+df["batter"].value_counts()
+```
+
+---
+
+## Descriptive Statistics
+
+Summary of numerical columns
+
+```python
+df.describe()
+```
+
+---
+
+## Maximum
+
+```python
+df["batsman_runs"].max()
+```
+
+---
+
+## Minimum
+
+```python
+df["batsman_runs"].min()
+```
+
+---
+
+## Mean
+
+```python
+df["batsman_runs"].mean()
+```
+
+---
+
+## Median
+
+```python
+df["batsman_runs"].median()
+```
+
+---
+
+## Standard Deviation
+
+```python
+df["batsman_runs"].std()
+```
+
+---
+
+# Key Learnings
+
+- Sorting Data
+- Unique Values
+- Value Counts
+- Descriptive Statistics
+- Mean, Median
+- Max & Min
+
+---
+
+# Day 18 Status
+
+✅ Sorting & Statistics Completed
+
+Next:
+- Missing Values
+- Duplicate Values
+- Data Cleaning
+
+
