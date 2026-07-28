@@ -1048,4 +1048,20 @@ Next:
 - Duplicate Values
 - Data Cleaning
 
+# Day 19
+
+## Topics Covered
+- sort_values()
+- unique()
+- nunique()
+- value_counts()
+- describe()
+
+## Key Learnings
+- Sorting organizes data.
+- unique() returns distinct values.
+- nunique() counts unique values.
+- value_counts() counts frequency.
+- describe() gives statistical summary.
+
 
