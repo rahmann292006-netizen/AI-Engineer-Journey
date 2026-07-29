@@ -1,184 +1,160 @@
 # 📊 Pandas Journey
 
-This folder documents my hands-on learning journey with **Pandas**, the most widely used Python library for data manipulation and analysis. It contains practice notebooks, notes, and examples covering essential Pandas concepts required for Data Science and Machine Learning.
+This folder documents my complete hands-on learning journey with **Pandas**, the most widely used Python library for data manipulation, cleaning, and analysis.
+
+Throughout this journey, I practiced essential Pandas concepts required for Data Science, Machine Learning, and AI while working with real datasets.
 
 ---
 
-## 📚 Topics Covered
+# 📚 Topics Covered
 
+## ✅ Pandas Basics
 - Introduction to Pandas
 - Series
 - DataFrames
+
+## ✅ Importing Data
 - Reading CSV Files
-- Data Inspection
-- Selecting Rows & Columns
-- Indexing (`loc[]` & `iloc[]`)
-- Filtering Data
-- Handling Missing Values
-- Sorting & Ranking
-- GroupBy Operations
-- Aggregation
-- Merge & Join
-- Concatenation
-- Pivot Tables
-- Apply Function
-- String Operations
-- Date & Time Operations
+- Dataset Inspection
+- Head & Tail
+- Shape
+- Columns
+- Data Types
+- Dataset Information
 
----
-
-## 📂 Files
-
-- **pandas_basics.ipynb** → Hands-on practice and examples
-- **notes.md** → Concept notes and explanations
-
----
-
-## 🎯 Learning Outcome
-
-After completing this journey, I will be able to:
-
-- Load and inspect datasets efficiently.
-- Clean and preprocess data.
-- Filter and transform data.
-- Perform grouping and aggregation.
-- Merge multiple datasets.
-- Prepare datasets for Machine Learning.
-- Analyze real-world datasets using Pandas.
-
----
-
-## 🚀 Status
-
-🟡 In Progress
-
----
-
-## ⭐ Why This Repository?
-
-This repository is part of my **AI Engineer Learning Journey**, where I document concepts, hands-on practice, and daily progress while building a strong foundation in Machine Learning and Generative AI.
-
----
-
-## 🔗 Next Topics
-
-- Matplotlib
-- Seaborn
-- Scikit-learn
-- Machine Learning
-
-# Day 17 - DataFrame Selection, Indexing & Filtering
-
-## Selecting Columns
-
-Select a single column:
-
-```python
-df["batter"]
-```
-
-Select multiple columns:
-
-```python
-df[["batter", "batsman_runs"]]
-```
-
----
-
-## Selecting Rows
-
-First 5 rows
-
-```python
-df[0:5]
-```
-
-Rows 10 to 20
-
-```python
-df[10:21]
-```
-
----
-
-## loc[]
-
-Used for label-based indexing.
-
-Examples:
-
-```python
-df.loc[0]
-df.loc[0:5]
-```
-
-Select rows and columns:
-
-```python
-df.loc[0:5, ["batter", "batsman_runs"]]
-```
-
----
-
-## iloc[]
-
-Used for integer position indexing.
-
-```python
-df.iloc[0]
-```
-
-```python
-df.iloc[0:5]
-```
-
-```python
-df.iloc[0:5, 0:2]
-```
-
----
-
-## Filtering Data
-
-Runs greater than 50
-
-```python
-df[df["batsman_runs"] > 50]
-```
-
-Runs greater than 20
-
-```python
-df[df["batsman_runs"] > 20]
-```
-
----
-
-## Multiple Conditions
-
-```python
-df[(df["batsman_runs"] > 20) & (df["ID"] > 100)]
-```
-
----
-
-# Key Learnings
-
-- Selecting rows
-- Selecting columns
+## ✅ Data Selection
+- Selecting Columns
+- Selecting Rows
 - loc[]
 - iloc[]
+
+## ✅ Data Filtering
 - Boolean Filtering
 - Multiple Conditions
 
+## ✅ Date & Time
+- DateTime Conversion
+- Extracting Year
+- Month
+- Day
+- Weekday
+
+## ✅ Sorting & Analysis
+- sort_values()
+- unique()
+- nunique()
+- value_counts()
+
+## ✅ Descriptive Statistics
+- describe()
+- mean()
+- median()
+- max()
+- min()
+
+## ✅ Data Cleaning
+- Missing Values
+- isnull()
+- dropna()
+- fillna()
+
+## ✅ Duplicate Handling
+- duplicated()
+- drop_duplicates()
+
+## ✅ Data Transformation
+- Creating New Columns
+- rename()
+- apply()
+
+## ✅ GroupBy Operations
+- sum()
+- mean()
+- max()
+- count()
+
+## ✅ Exporting Data
+- to_csv()
+
 ---
 
-# Day 17 Status
+# 📂 Files
 
-✅ DataFrame Selection & Filtering Completed
+- **pandas_basics.ipynb** → Hands-on practice notebook
+- **notes.md** → Daily notes and concept explanations
 
-Next:
-- Sorting
-- Renaming Columns
-- Value Counts
-- Unique Values
+---
+
+# 🎯 Learning Outcomes
+
+After completing this journey, I can:
+
+- Read and inspect datasets.
+- Select rows and columns efficiently.
+- Filter data using multiple conditions.
+- Handle missing values and duplicate records.
+- Sort and summarize datasets.
+- Create and transform columns.
+- Perform GroupBy operations.
+- Generate descriptive statistics.
+- Prepare datasets for Machine Learning.
+- Export processed datasets.
+
+---
+
+# 📈 Progress Summary
+
+| Topic | Status |
+|--------|--------|
+| Pandas Basics | ✅ |
+| Reading CSV | ✅ |
+| Data Inspection | ✅ |
+| Row & Column Selection | ✅ |
+| loc & iloc | ✅ |
+| Filtering | ✅ |
+| DateTime | ✅ |
+| Sorting | ✅ |
+| Unique Values | ✅ |
+| Value Counts | ✅ |
+| Statistics | ✅ |
+| Missing Values | ✅ |
+| Duplicate Handling | ✅ |
+| Data Transformation | ✅ |
+| GroupBy | ✅ |
+| Export CSV | ✅ |
+
+---
+
+# 🚀 Status
+
+✅ **Pandas Fundamentals Completed**
+
+---
+
+# ⭐ Why This Repository?
+
+This repository is part of my **AI Engineer Learning Journey**, where I document every concept, practice notebook, and daily progress while building a strong foundation in Artificial Intelligence, Machine Learning, and Generative AI.
+
+---
+
+# 🎯 Next Learning Path
+
+- 📈 Matplotlib
+- 🎨 Seaborn
+- 📊 Exploratory Data Analysis (EDA)
+- 🤖 Scikit-learn
+- 🧠 Machine Learning
+- 🔥 Deep Learning
+- 💬 NLP
+- 🚀 LLMs & Generative AI
+
+---
+
+## 📅 Journey Status
+
+- ✅ Python Fundamentals Completed
+- ✅ NumPy (In Progress)
+- ✅ Pandas Fundamentals Completed
+- 🔜 Matplotlib & Seaborn
+- 🔜 Machine Learning
+- 🔜 AI Projects
