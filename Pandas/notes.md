@@ -1064,4 +1064,42 @@ Next:
 - value_counts() counts frequency.
 - describe() gives statistical summary.
 
+# Day 20 Notes
+
+## Pandas Revision
+
+Completed the core fundamentals of Pandas.
+
+### Functions Practiced
+
+- read_csv()
+- head()
+- tail()
+- shape
+- columns
+- info()
+- dtypes
+- loc[]
+- iloc[]
+- Filtering
+- sort_values()
+- unique()
+- nunique()
+- value_counts()
+- describe()
+- mean()
+- median()
+- max()
+- min()
+- isnull()
+- duplicated()
+- drop_duplicates()
+- apply()
+- rename()
+- groupby()
+- to_csv()
+
+## Learning
+
+Pandas makes data cleaning, exploration, and analysis simple and efficient. These concepts form the base for Machine Learning and Data Science workflows.
 
