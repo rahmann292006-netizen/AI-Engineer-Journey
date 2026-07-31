@@ -19,3 +19,19 @@ Matplotlib allows us to convert raw data into meaningful visual insights, making
 
 Next:
 Seaborn
+
+# Day 22 Notes
+
+Today's focus was on making plots more readable and professional.
+
+Practiced:
+- Colors
+- Line Styles
+- Markers
+- Grid
+- Legends
+- Axis Limits
+- Annotations
+- Saving Figures
+
+Visualization quality is as important as the data itself.
