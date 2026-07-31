@@ -54,3 +54,21 @@ After completing this journey, I will be able to:
 - Seaborn
 - Exploratory Data Analysis (EDA)
 - Machine Learning
+
+# Day 22 – Matplotlib Customization
+
+## Topics Covered
+
+- Figure Size
+- Colors
+- Line Styles
+- Markers
+- Legends
+- Grid
+- Axis Limits
+- Annotations
+- Saving Figures
+
+## Learning Outcome
+
+Learned how to create clean and professional-looking visualizations by customizing plots using Matplotlib.
