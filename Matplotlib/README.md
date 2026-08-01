@@ -72,3 +72,20 @@ After completing this journey, I will be able to:
 ## Learning Outcome
 
 Learned how to create clean and professional-looking visualizations by customizing plots using Matplotlib.
+
+## Day 23 Progress
+
+### Real Dataset Visualization
+
+Practiced data visualization using a real IPL dataset.
+
+Covered:
+
+- Bar Chart
+- Histogram
+- Scatter Plot
+- Subplots
+- Figure Saving
+- Plot Customization
+
+This marks the beginning of applying visualization techniques to real-world datasets before moving into Exploratory Data Analysis (EDA).
