@@ -35,3 +35,39 @@ Practiced:
 - Saving Figures
 
 Visualization quality is as important as the data itself.
+
+# Day 23 - Real Dataset Visualization
+
+## Topics Covered
+
+- Loading real datasets with Pandas
+- Creating Bar Charts
+- Creating Histograms
+- Creating Scatter Plots
+- Using Subplots
+- Saving Figures
+
+## What I Learned
+
+Today I combined Pandas with Matplotlib to visualize a real IPL dataset.
+
+I learned how to:
+- Read datasets using Pandas
+- Analyze data visually
+- Create meaningful charts
+- Compare multiple plots using subplots
+- Save figures for future use
+
+## Key Takeaway
+
+Data visualization is the bridge between raw data and meaningful insights. Before building Machine Learning models, it's important to understand the dataset through visual analysis.
+
+---
+
+## Status
+
+✅ Day 23 Completed
+
+Next:
+- Advanced Visualization
+- Mini EDA Project
