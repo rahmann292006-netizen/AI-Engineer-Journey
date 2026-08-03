@@ -121,6 +121,7 @@ AI-Engineer-Journey
 ├── Pandas
 ├── Matplotlib
 └── (Next → EDA)
+
 🎯 Skills Completed
 Python          ██████████ 100%
 
@@ -132,6 +133,7 @@ Matplotlib      ██████████ 100%
 
 EDA             ░░░░░░░░░░   0%
 📈 Overall Progress
+
 AI Engineer Journey
 
 Day 1 ───────────────────────► Day 24
