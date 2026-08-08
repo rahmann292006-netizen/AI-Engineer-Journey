@@ -230,4 +230,43 @@ Univariate Analysis helps understand:
 - Correlation
 - Scatter Plots
 
+# Day 27/84 - Bivariate Analysis 🌸
 
+## Objective
+
+Analyze relationships between two variables using the Iris dataset.
+
+## Topics Covered
+
+- Numerical vs Numerical Analysis
+- Scatter Plots
+- Categorical Grouping
+- GroupBy Analysis
+- Mean Comparison
+- Correlation Analysis
+
+## Analysis Performed
+
+- Sepal Length vs Sepal Width
+- Petal Length vs Petal Width
+- Petal Features by Species
+- Average Features by Species
+- Feature Correlation
+
+## Key Learning
+
+Bivariate analysis helps understand how two variables relate to each other.
+
+Scatter plots help identify relationships and patterns, while correlation helps measure the strength and direction of linear relationships.
+
+## Status
+
+Python ✅
+NumPy ✅
+Pandas ✅
+Matplotlib ✅
+EDA Basics ✅
+Univariate Analysis ✅
+Bivariate Analysis ✅
+
+Next → Multivariate Analysis
