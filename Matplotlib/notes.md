@@ -270,3 +270,49 @@ Univariate Analysis ✅
 Bivariate Analysis ✅
 
 Next → Multivariate Analysis
+
+# Day 28/84 - Multivariate Analysis 🌸
+
+## Objective
+
+Analyze multiple features together using the Iris dataset.
+
+## Topics Covered
+
+- Multivariate Analysis
+- Correlation Matrix
+- Correlation Heatmap
+- GroupBy Analysis
+- Species-wise Feature Comparison
+- Multiple Feature Relationships
+
+## Analysis Performed
+
+- Feature correlation
+- Average features by species
+- Petal length vs petal width by species
+- Sepal length vs sepal width by species
+- Species-wise feature comparisons
+
+## Key Learning
+
+Multivariate analysis helps understand relationships between multiple variables at the same time.
+
+It can reveal:
+- Strong correlations
+- Feature patterns
+- Group differences
+- Potentially useful ML features
+
+## EDA Progress
+
+Python ✅
+NumPy ✅
+Pandas ✅
+Matplotlib ✅
+EDA Basics ✅
+Univariate Analysis ✅
+Bivariate Analysis ✅
+Multivariate Analysis ✅
+
+Next → Outlier Detection & Data Cleaning
