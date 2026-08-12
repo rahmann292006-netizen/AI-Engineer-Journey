@@ -143,11 +143,85 @@ Next, I started looking for unusual values in the dataset.
 - Boxplots
 - Feature-wise analysis
 
-### IQR Method
-
-```text
+### IQR Method```text
 IQR = Q3 - Q1
 
 Lower Bound = Q1 - 1.5 × IQR
 
 Upper Bound = Q3 + 1.5 × IQR
+
+
+# Key takeaway
+
+An outlier isn't automatically bad data.
+
+It could be a measurement error, data-entry mistake, rare observation, or a genuine unusual case.
+
+The important part is understanding the data before deciding what to do with it.
+
+# Day 30 — Data Cleaning & EDA Wrap-up
+
+Day 30 was about putting everything together.
+
+Practiced
+Dataset inspection
+Missing-value checks
+Duplicate detection
+Removing duplicates
+Data-type inspection
+Descriptive statistics
+Outlier detection
+Correlation analysis
+Species-wise comparisons
+Final visualization
+Building a complete EDA workflow
+Final EDA Workflow
+Raw Dataset
+     ↓
+Inspect
+     ↓
+Clean
+     ↓
+Understand distributions
+     ↓
+Find relationships
+     ↓
+Detect outliers
+     ↓
+Analyze correlations
+     ↓
+Compare groups
+     ↓
+Extract insights
+Biggest lesson
+
+EDA isn't about making random charts until something looks interesting.
+
+It's about asking the right questions about the data.
+
+🧠 What I learned from the EDA phase
+
+The biggest shift for me wasn't learning another Pandas function.
+
+It was learning to look at a dataset and ask:
+
+What is actually inside this data?
+Are there missing values?
+Are there duplicates?
+What does each feature look like?
+How are features related?
+Are there unusual observations?
+Do different groups behave differently?
+What can I actually conclude from the data?
+
+This phase helped me move from simply handling data to actually thinking about data.
+
+🛠️ Tools Used
+Python
+NumPy
+Pandas
+Matplotlib
+Scikit-learn
+Jupyter Notebook
+VS Code
+
