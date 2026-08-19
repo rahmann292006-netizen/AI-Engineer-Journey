@@ -1,145 +1,179 @@
 # NumPy Learning Journey 🚀
 
-This folder documents my complete NumPy learning journey through hands-on practice, detailed notes, and real coding exercises.
+This folder documents my hands-on journey with **NumPy**, from array fundamentals to advanced array manipulation, vectorization, broadcasting, and linear algebra.
+
+NumPy is one of the core foundations of the Python Data Science and Machine Learning ecosystem.
 
 ---
 
 ## 📚 Topics Covered
 
-### **Foundation & Array Basics**
-- Array Creation Methods (`np.array`, `arange`, `linspace`, `ones`, `zeros`, `identity`, random arrays)
-- Array Properties (`dtype`, `size`, `ndim`, `shape`, `itemsize`, `astype`)
-- Array Reshaping & Manipulation
+### Foundation & Array Basics
 
-### **Mathematical & Statistical Operations**
-- Element-wise Arithmetic Operations (`+`, `-`, `*`, `/`, `**`)
-- Statistical Functions (`sum`, `mean`, `max`, `min`, `prod`, `median`, `var`, `std`)
-- Comparison Operations & Boolean Masking
-- Universal Functions (ufuncs): `sqrt`, `sin`, `cos`, `tan`, `log`, `exp`, `abs`
+- Array Creation
+- `np.array()`
+- `np.arange()`
+- `np.linspace()`
+- `np.ones()`
+- `np.zeros()`
+- Identity matrices
+- Random arrays
+- Array properties:
+  - `dtype`
+  - `size`
+  - `ndim`
+  - `shape`
+  - `itemsize`
+- Type conversion using `astype()`
+- Reshaping arrays
 
-### **Advanced Array Techniques**
-- **Indexing** - Single element, row/column access, negative indexing
-- **Slicing** - Row/column ranges, submatrix extraction
-- **Boolean Masking** - Conditional filtering (`arr[arr > 5]`)
-- **Fancy Indexing** - Integer array indexing for rows/columns
-- **Broadcasting** - Operations on arrays of different shapes
-- **Vectorization** - Replacing loops with optimized array operations
+### Mathematical & Statistical Operations
 
-### **Array Combining & Transforming**
-- **Stacking** - Vertical (`vstack`) & Horizontal (`hstack`)
-- **Splitting** - `np.split` for dividing arrays
-- **Sorting** - `np.sort` for ascending order
-- **Searching** - `np.where` for conditional indices
-- **Unique Values** - `np.unique` for deduplication
-- **Count Non-Zero** - `np.count_nonzero` for sparse data analysis
+- Element-wise arithmetic
+- `sum()`
+- `mean()`
+- `max()`
+- `min()`
+- `prod()`
+- `median()`
+- `var()`
+- `std()`
+- Comparison operations
+- Boolean masking
+- NumPy universal functions:
+  - `sqrt()`
+  - `sin()`
+  - `cos()`
+  - `tan()`
+  - `log()`
+  - `exp()`
+  - `abs()`
 
-### **Linear Algebra**
-- Matrix Multiplication (`np.dot`, `@` operator)
-- Matrix Transpose (`.T`)
-- Determinant (`np.linalg.det`)
-- Matrix Inverse (`np.linalg.inv`)
-- Matrix Rank (`np.linalg.matrix_rank`)
-- Trace (`np.trace`)
-- Eigenvalues & Eigenvectors (`np.linalg.eig`)
+### Indexing & Selection
+
+- Basic indexing
+- Negative indexing
+- Row and column selection
+- Slicing
+- Subarray extraction
+- Boolean masking
+- Fancy indexing
+- Conditional selection
+
+### Broadcasting & Vectorization
+
+- Broadcasting rules
+- Operations between different array shapes
+- Vectorized operations
+- Replacing Python loops with NumPy operations
+- Understanding performance benefits of vectorization
+
+### Array Manipulation
+
+- `np.vstack()`
+- `np.hstack()`
+- `np.split()`
+- `np.sort()`
+- `np.where()`
+- `np.unique()`
+- `np.count_nonzero()`
+
+### Linear Algebra
+
+- Matrix multiplication
+- `np.dot()`
+- `@` operator
+- Matrix transpose
+- Determinant
+- Matrix inverse
+- Matrix rank
+- Trace
+- Eigenvalues
+- Eigenvectors
 
 ---
 
-## 📂 Files in This Folder
+## 📂 Files
 
 | File | Description |
 |------|-------------|
-| `numpy_hands_on.ipynb` | **Complete hands-on notebook** with 70+ code cells covering all topics above, including practice challenges and mini-projects |
-| `notes.md` | **Comprehensive concept notes** with explanations, code examples, and key learnings for each topic |
-| `Projects/` | *(Directory)* Additional mini-projects applying NumPy to real-world scenarios |
+| `numpy_hands_on.ipynb` | Hands-on practice covering NumPy concepts and exercises |
+| `notes.md` | Notes, explanations, examples and important concepts |
+| `Projects/` | NumPy-based practice and mini-projects |
 
 ---
 
 ## 🎯 Learning Outcomes
 
-After completing this journey, I can confidently:
+After completing this journey, I can:
 
-- ✅ **Create and manipulate** NumPy arrays of any dimension
-- ✅ **Perform mathematical and statistical** computations efficiently
-- ✅ **Apply indexing, slicing, and boolean masking** for precise data selection
-- ✅ **Use broadcasting and vectorization** to write faster, cleaner code
-- ✅ **Work with sorting, searching, stacking, and splitting** operations
-- ✅ **Solve linear algebra problems** including matrix operations, decompositions, and eigenvalue problems
-- ✅ **Optimize performance** by replacing Python loops with vectorized operations
-- ✅ **Apply NumPy** as the foundation for Pandas, Matplotlib, Scikit-learn, and Deep Learning
-
----
-
-## 📖 Study Approach
-
-| Day | Focus Area | Notebook Section |
-|-----|------------|------------------|
-| **Day 1** | Array Creation, Properties, Reshaping, Basic Math | Cells 1-12 |
-| **Day 2** | Statistical Functions, Matrix Multiplication, Visualization | Cells 13-15 |
-| **Day 3** | Indexing, Slicing, Boolean Masking, Fancy Indexing, Iteration | Cell 16 |
-| **Day 4** | Broadcasting, Vectorization, Ufuncs, Conditional Operations | Cells 17-19 |
-| **Day 5** | Stacking, Splitting, Sorting, Searching, Unique Values | Cells 20-26 |
-| **Day 6** | Linear Algebra: Transpose, Determinant, Inverse, Eigenvalues | Cells 27-30 |
+- Create and manipulate multidimensional arrays
+- Perform mathematical and statistical operations
+- Use indexing, slicing and Boolean masking
+- Apply broadcasting and vectorization
+- Manipulate, combine and split arrays
+- Perform matrix and linear algebra operations
+- Use NumPy efficiently for data processing
+- Understand NumPy as a foundation for Data Science and Machine Learning
 
 ---
 
-## 🔑 Key Concepts Mastered
+## 🔥 Key Takeaways
 
-### **Performance Optimization**
-- **Vectorization**: Element-wise operations on entire arrays (10-100x faster than loops)
-- **Broadcasting**: Automatic shape alignment for arithmetic operations
-- **Memory Efficiency**: Homogeneous arrays with fixed memory layout
-- **Ufuncs**: Optimized C-level implementations for mathematical functions
+### Vectorization
 
-### **Data Manipulation Patterns**
-- **Filtering**: `arr[arr > threshold]` for conditional selection
-- **Aggregation**: `np.mean(arr, axis=0)` for row/column statistics
-- **Transformation**: `arr.reshape(-1, 1)` for dimension alignment
-- **Combination**: `np.vstack/hstack` for building datasets
+Performing operations on entire arrays instead of manually iterating through elements.
 
-### **Linear Algebra Foundations**
-- Matrix operations essential for ML algorithms
-- Eigendecomposition for PCA and dimensionality reduction
-- Matrix inversion for solving linear systems
-- Rank and trace for matrix property analysis
+### Broadcasting
+
+Allowing NumPy to perform operations between arrays with compatible shapes.
+
+### Boolean Masking
+
+Filtering data using conditions directly on arrays.
+
+### Linear Algebra
+
+Understanding matrices, eigenvalues, eigenvectors and matrix operations that form the mathematical foundation of many ML algorithms.
 
 ---
 
 ## 📊 Practice Highlights
 
-The notebook includes **practical challenges** such as:
-- Student marks analysis (statistics, filtering, sorting)
-- Sales data processing (aggregation, ranking)
-- Matrix operations with bonus calculations
-- Array attribute exploration exercises
-- Random data generation and manipulation
+Practiced NumPy using:
+
+- Student marks analysis
+- Sales data processing
+- Statistical calculations
+- Array filtering
+- Sorting and searching
+- Matrix operations
+- Random data generation
+- Array manipulation challenges
 
 ---
 
 ## 🚀 Status
 
-✅ **NumPy Fundamentals Completed**
+✅ **Completed**
+
+NumPy fundamentals and hands-on practice completed.
 
 ---
 
-## 🗺️ Next Steps
+## 🗺️ Next Step
 
-| Priority | Topic | Purpose |
-|----------|-------|---------|
-| **1** | **Pandas** | DataFrames, Series, data cleaning, aggregation, merging |
-| **2** | **Matplotlib/Seaborn** | Data visualization, plotting, exploratory analysis |
-| **3** | **Scikit-learn** | ML pipelines, preprocessing, model training |
-| **4** | **Deep Learning** | TensorFlow/PyTorch foundations |
+→ **Pandas → Matplotlib → EDA → Machine Learning**
 
 ---
 
-## 💡 Resources for Continued Learning
+## 📖 Resources
 
-- [NumPy Official Documentation](https://numpy.org/doc/)
+- [NumPy Documentation](https://numpy.org/doc/)
 - [NumPy User Guide](https://numpy.org/doc/stable/user/index.html)
 - [100 NumPy Exercises](https://github.com/rougier/numpy-100)
-- [Python Data Science Handbook - NumPy Chapter](https://jakevdp.github.io/PythonDataScienceHandbook/02.00-introduction-to-numpy.html)
+- [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/02.00-introduction-to-numpy.html)
 
 ---
 
-*Last Updated: August 2025*  
-*Part of the AI Engineer Journey Repository*
+*Part of the AI Engineer Journey 🚀*
