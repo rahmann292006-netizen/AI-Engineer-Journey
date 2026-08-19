@@ -581,3 +581,63 @@ The complete Day 31–36 implementation is available in:
 ---
 
 *Last updated: Day 36/84 — Machine Learning Journey continues... 🚀*
+# Day 37/84 — Linear Regression
+
+Started building my first supervised Machine Learning model.
+
+## What I learned
+
+- What Linear Regression does
+- Features (X) and target (y)
+- Training a regression model
+- `.fit()` for training
+- `.predict()` for predictions
+- Model coefficient
+- Model intercept
+- MAE
+- MSE
+- RMSE
+- R² Score
+
+## Practice
+
+Built a simple Linear Regression model using a small numerical dataset.
+
+The workflow:
+
+Data
+→ Train/Test Split
+→ Linear Regression
+→ Model Training
+→ Prediction
+→ Evaluation
+
+## Evaluation Metrics
+
+### MAE
+Measures the average absolute difference between actual and predicted values.
+
+### MSE
+Measures the average squared prediction error.
+
+### RMSE
+Square root of MSE, giving the error in the original target scale.
+
+### R² Score
+Measures how well the model explains the variation in the target.
+
+## Key Takeaway
+
+A Machine Learning model is not just about training it.
+
+The important workflow is:
+
+Understand the data
+→ Train the model
+→ Make predictions
+→ Evaluate the predictions
+→ Improve the model
+
+## Next
+
+→ Multiple features with Linear Regression
