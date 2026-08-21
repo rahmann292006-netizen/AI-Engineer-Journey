@@ -641,3 +641,24 @@ Understand the data
 ## Next
 
 → Multiple features with Linear Regression
+
+# Day 38/84 — Multiple Linear Regression 🚀
+
+Today I extended Linear Regression from a single feature to multiple features.
+
+---
+
+## 🎯 Objective
+
+Understand how multiple input features can be used together to predict a continuous target.
+
+Example:
+
+```text
+Hours Studied
+Attendance
+Assignments
+      ↓
+Linear Regression Model
+      ↓
+Predicted Marks
