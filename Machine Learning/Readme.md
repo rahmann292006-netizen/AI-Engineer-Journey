@@ -662,3 +662,36 @@ Assignments
 Linear Regression Model
       ↓
 Predicted Marks
+
+# Day 39/84 — Regression Model Evaluation & Residual Analysis 📊
+
+Today I stopped looking only at predictions and focused on understanding the errors produced by a regression model.
+
+---
+
+## 🎯 Objective
+
+Learn how to compare actual and predicted values and analyze how well a regression model performs.
+
+---
+
+## 📚 Topics Covered
+
+- Residuals
+- Actual vs Predicted values
+- MAE
+- MSE
+- RMSE
+- R² Score
+- Residual analysis
+- Error visualization
+- Overprediction and underprediction
+
+---
+
+## 🧠 Residuals
+
+A residual is the difference between the actual value and the predicted value.
+
+```text
+Residual = Actual - Predicted
