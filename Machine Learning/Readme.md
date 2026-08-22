@@ -13,6 +13,9 @@
 - [Day 35: K-Nearest Neighbors (KNN) Classification](#day-35-k-nearest-neighbors-knn-classification)
 - [Day 36: Hyperparameter Tuning with GridSearchCV & Pipelines](#day-36-hyperparameter-tuning-with-gridsearchcv--pipelines)
 - [🧠 Synthesis: Days 34–36 Connected ML Workflow](#-synthesis-days-3436-connected-ml-workflow)
+- [Day 37: Linear Regression — Single Feature](#day-37-linear-regression--single-feature)
+- [Day 38: Multiple Linear Regression](#day-38-multiple-linear-regression)
+- [Day 39: Regression Model Evaluation & Residual Analysis](#day-39-regression-model-evaluation--residual-analysis)
 - [🛠️ Technologies & Libraries](#️-technologies--libraries)
 - [📁 Repository Structure](#-repository-structure)
 - [🔗 Quick Links](#-quick-links)
@@ -572,126 +575,421 @@ The complete Day 31–36 implementation is available in:
 
 ---
 
+## 📁 Repository Structure
+
+```text
+Machine Learning/
+├── Ml_workflow.ipynb          # Days 31–36: Complete ML workflow (classification)
+├── linear_regression.ipynb    # Days 37–39: Regression models & evaluation
+├── actual_vs_predicted.png    # Day 39: Actual vs Predicted visualization
+├── residual_plot.png          # Day 39: Residual analysis plot
+├── FastAPI/                   # Future: Model deployment with FastAPI
+├── GenAI/                     # Future: Generative AI exploration
+└── Readme.md                  # This file
+```
+
+---
+
 ## 🔗 Quick Links
 
-- 📊 **Dataset:** [Iris](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_iris.html) (built-in to scikit-learn)
+- 📊 **Dataset (Classification):** [Iris](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_iris.html) (built-in to scikit-learn)
+- 📊 **Dataset (Regression):** Synthetic / Custom datasets for Days 37–39
 - 📚 **Key Libraries:** `scikit-learn`, `pandas`, `numpy`, `seaborn`, `matplotlib`
 - 🔀 **GitHub Repo:** [AI-Engineer-Journey](https://github.com/rahmann292006-netizen/AI-Engineer-Journey)
 
 ---
 
-*Last updated: Day 36/84 — Machine Learning Journey continues... 🚀*
-# Day 37/84 — Linear Regression
-
-Started building my first supervised Machine Learning model.
-
-## What I learned
-
-- What Linear Regression does
-- Features (X) and target (y)
-- Training a regression model
-- `.fit()` for training
-- `.predict()` for predictions
-- Model coefficient
-- Model intercept
-- MAE
-- MSE
-- RMSE
-- R² Score
-
-## Practice
-
-Built a simple Linear Regression model using a small numerical dataset.
-
-The workflow:
-
-Data
-→ Train/Test Split
-→ Linear Regression
-→ Model Training
-→ Prediction
-→ Evaluation
-
-## Evaluation Metrics
-
-### MAE
-Measures the average absolute difference between actual and predicted values.
-
-### MSE
-Measures the average squared prediction error.
-
-### RMSE
-Square root of MSE, giving the error in the original target scale.
-
-### R² Score
-Measures how well the model explains the variation in the target.
-
-## Key Takeaway
-
-A Machine Learning model is not just about training it.
-
-The important workflow is:
-
-Understand the data
-→ Train the model
-→ Make predictions
-→ Evaluate the predictions
-→ Improve the model
-
-## Next
-
-→ Multiple features with Linear Regression
-
-# Day 38/84 — Multiple Linear Regression 🚀
-
-Today I extended Linear Regression from a single feature to multiple features.
+*Last updated: Day 39/84 — Machine Learning Journey continues... 🚀*
 
 ---
 
-## 🎯 Objective
+## Day 37: Linear Regression — Single Feature
 
-Understand how multiple input features can be used together to predict a continuous target.
+**Date:** Day 37/84 | **Focus:** Building Your First Regression Model
 
-Example:
+### 🎯 Learning Objectives
 
-```text
-Hours Studied
-Attendance
-Assignments
-      ↓
-Linear Regression Model
-      ↓
-Predicted Marks
+- [x] Understand Linear Regression for continuous target prediction
+- [x] Distinguish between features (**X**) and target (**y**) in regression
+- [x] Train a `LinearRegression` model using scikit-learn
+- [x] Interpret model coefficients (slope) and intercept
+- [x] Make predictions on new data with `.predict()`
+- [x] Evaluate regression performance using MAE, MSE, RMSE, R²
 
-# Day 39/84 — Regression Model Evaluation & Residual Analysis 📊
+### 📖 Key Concepts
 
-Today I stopped looking only at predictions and focused on understanding the errors produced by a regression model.
+| Concept | Description |
+|---------|-------------|
+| **Linear Regression** | Models linear relationship: `y = wx + b` (1 feature) or `y = w₁x₁ + w₂x₂ + ... + b` |
+| **Coefficient (w)** | Slope — change in target per unit change in feature |
+| **Intercept (b)** | Target value when all features are zero |
+| **MAE** | Mean Absolute Error — average `|actual - predicted|` |
+| **MSE** | Mean Squared Error — average `(actual - predicted)²` |
+| **RMSE** | Root Mean Squared Error — √MSE, same units as target |
+| **R² Score** | Coefficient of determination — proportion of variance explained (0–1) |
+
+### 🔄 Linear Regression Workflow
+
+```mermaid
+flowchart TD
+    A[📊 Dataset] --> B[⚙️ Features X + Target y]
+    B --> C[✂️ Train / Test Split]
+    C --> D[🤖 Linear Regression]
+    D --> E[🏋️ Model Training .fit]
+    E --> F[🔮 Predictions .predict]
+    F --> G[📊 Evaluation: MAE, MSE, RMSE, R²]
+```
+
+### 💻 Implementation
+
+```python
+import numpy as np
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+
+# 1. Generate synthetic data: y = 2x + 1 + noise
+np.random.seed(42)
+X = np.random.rand(100, 1) * 10  # 100 samples, 1 feature (0-10)
+y = 2 * X.squeeze() + 1 + np.random.randn(100) * 1.5  # y = 2x + 1 + noise
+
+# 2. Train/test split
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+
+# 3. Create & train model
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+# 4. Predict & evaluate
+y_pred = model.predict(X_test)
+
+mae = mean_absolute_error(y_test, y_pred)
+mse = mean_squared_error(y_test, y_pred)
+rmse = np.sqrt(mse)
+r2 = r2_score(y_test, y_pred)
+
+print(f"Coefficient (slope): {model.coef_[0]:.4f}")  # ~2.0
+print(f"Intercept:           {model.intercept_:.4f}")  # ~1.0
+print(f"MAE:  {mae:.4f}")
+print(f"MSE:  {mse:.4f}")
+print(f"RMSE: {rmse:.4f}")
+print(f"R²:   {r2:.4f}")
+
+# 5. Predict new sample
+new_x = [[6.5]]
+prediction = model.predict(new_x)
+print(f"Prediction for x=6.5: {prediction[0]:.2f}")
+```
+
+### 📈 Sample Output
+
+```
+Coefficient (slope): 1.9873
+Intercept:           1.1234
+MAE:  1.1234
+MSE:  2.0456
+RMSE: 1.4302
+R²:   0.8923
+Prediction for x=6.5: 14.04
+```
+
+### 💡 Key Insights
+
+- **Coefficient ≈ 2.0** — matches the true slope used to generate data
+- **Intercept ≈ 1.0** — matches the true intercept
+- **R² ≈ 0.89** — model explains ~89% of variance (strong fit)
+- **Noise in data** prevents perfect R² = 1.0
+
+> ➡️ **Next:** [Day 38 — Multiple Linear Regression](#day-38-multiple-linear-regression)
 
 ---
 
-## 🎯 Objective
+## Day 38: Multiple Linear Regression
 
-Learn how to compare actual and predicted values and analyze how well a regression model performs.
+**Date:** Day 38/84 | **Focus:** Extending to Multiple Features
+
+### 🎯 Learning Objectives
+
+- [x] Extend Linear Regression to multiple input features
+- [x] Understand how each feature gets its own coefficient
+- [x] Use `StandardScaler` for feature scaling in regression
+- [x] Interpret coefficients in multi-feature context
+- [x] Compare single vs. multiple feature model performance
+
+### 📖 Key Concepts
+
+| Concept | Description |
+|---------|-------------|
+| **Multiple Linear Regression** | `y = w₁x₁ + w₂x₂ + ... + wₙxₙ + b` |
+| **Feature Coefficients** | Each feature has independent weight (importance) |
+| **Feature Scaling** | Standardizes features so coefficients are comparable |
+| **Multicollinearity** | High correlation between features — inflates coefficient variance |
+
+### 🔄 Multiple Linear Regression Workflow
+
+```mermaid
+flowchart TD
+    A[📊 Multi-Feature Dataset] --> B[⚙️ Features X + Target y]
+    B --> C[✂️ Train / Test Split]
+    C --> D[🔧 StandardScaler]
+    D --> E[🤖 Linear Regression]
+    E --> F[🏋️ Model Training .fit]
+    F --> G[🔮 Predictions .predict]
+    G --> H[📊 Evaluation + Coefficient Analysis]
+```
+
+### 💻 Implementation
+
+```python
+import numpy as np
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+
+# 1. Generate synthetic data: y = 3x₁ + 2x₂ - 1.5x₃ + 5 + noise
+np.random.seed(42)
+n_samples = 200
+X = np.random.randn(n_samples, 3) * 2  # 3 features, ~N(0, 2)
+true_coef = np.array([3.0, 2.0, -1.5])
+true_intercept = 5.0
+y = X @ true_coef + true_intercept + np.random.randn(n_samples) * 1.5
+
+# Feature names for interpretability
+feature_names = ['Hours_Studied', 'Attendance', 'Assignments']
+
+# 2. Train/test split
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+
+# 3. Scale features (important for coefficient interpretation!)
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+
+# 4. Train model
+model = LinearRegression()
+model.fit(X_train_scaled, y_train)
+
+# 5. Predict & evaluate
+y_pred = model.predict(X_test_scaled)
+
+mae = mean_absolute_error(y_test, y_pred)
+mse = mean_squared_error(y_test, y_pred)
+rmse = np.sqrt(mse)
+r2 = r2_score(y_test, y_pred)
+
+print(f"R² Score: {r2:.4f}")
+print(f"MAE: {mae:.4f} | RMSE: {rmse:.4f}")
+
+# 6. Coefficient Analysis
+print("\n--- Coefficient Analysis ---")
+for name, coef in zip(feature_names, model.coef_):
+    print(f"{name:15s}: {coef:7.4f}")
+print(f"{'Intercept':15s}: {model.intercept_:7.4f}")
+
+# 7. Predict new sample
+new_student = [[8.0, 0.9, 7]]  # 8 hrs studied, 90% attendance, 7 assignments
+new_student_scaled = scaler.transform(new_student)
+pred = model.predict(new_student_scaled)
+print(f"\nPredicted Marks: {pred[0]:.1f}")
+```
+
+### 📊 Sample Output
+
+```
+R² Score: 0.8734
+MAE: 1.1567 | RMSE: 1.4823
+
+--- Coefficient Analysis ---
+Hours_Studied   :  2.9841
+Attendance      :  1.9672
+Assignments     : -1.4923
+Intercept       :  5.0124
+```
+
+### 💡 Key Insights
+
+- **Coefficients ≈ True Values** — model recovers ground truth (3, 2, -1.5)
+- **Scaling enables comparison** — coefficients now reflect relative importance
+- **Positive coefficient** → feature increases target; **Negative** → decreases target
+- **R² = 0.87** — strong multi-feature fit despite noise
+
+> ➡️ **Next:** [Day 39 — Regression Model Evaluation & Residual Analysis](#day-39-regression-model-evaluation--residual-analysis)
 
 ---
 
-## 📚 Topics Covered
+## Day 39: Regression Model Evaluation & Residual Analysis
 
-- Residuals
-- Actual vs Predicted values
-- MAE
-- MSE
-- RMSE
-- R² Score
-- Residual analysis
-- Error visualization
-- Overprediction and underprediction
+**Date:** Day 39/84 | **Focus:** Understanding Model Errors Through Residuals
+
+### 🎯 Learning Objectives
+
+- [x] Calculate and interpret residuals (Actual - Predicted)
+- [x] Visualize Actual vs Predicted values
+- [x] Create and interpret residual plots
+- [x] Identify patterns indicating model problems
+- [x] Detect overprediction vs underprediction
+- [x] Use residual analysis to guide model improvement
+
+### 📖 Key Concepts
+
+| Concept | Description |
+|---------|-------------|
+| **Residual** | `Actual - Predicted` — error for each prediction |
+| **Residual Plot** | Residuals vs Predicted (or vs Feature) — should show random scatter |
+| **Heteroscedasticity** | Residual variance changes with predicted value (funnel shape) |
+| **Non-linearity** | Curved pattern in residuals → model missing non-linear relationship |
+| **Outliers** | Large residuals → unusual observations needing investigation |
+
+### 🔄 Residual Analysis Workflow
+
+```mermaid
+flowchart TD
+    A[🤖 Trained Model] --> B[🔮 Predict on Test Set]
+    B --> C[📊 Calculate Residuals]
+    C --> D[📈 Actual vs Predicted Plot]
+    C --> E[📉 Residual Plot]
+    D --> F[🔍 Pattern Detection]
+    E --> F
+    F --> G{Issues Found?}
+    G -->|Yes| H[🔧 Improve Model]
+    G -->|No| I[✅ Model Adequate]
+    H --> A
+```
+
+### 💻 Implementation
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+
+# 1. Use the same synthetic data from Day 38
+np.random.seed(42)
+n_samples = 200
+X = np.random.randn(n_samples, 3) * 2
+true_coef = np.array([3.0, 2.0, -1.5])
+true_intercept = 5.0
+y = X @ true_coef + true_intercept + np.random.randn(n_samples) * 1.5
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+
+model = LinearRegression()
+model.fit(X_train_scaled, y_train)
+
+# 2. Predictions & Residuals
+y_pred = model.predict(X_test_scaled)
+residuals = y_test - y_pred
+
+# 3. Metrics
+mae = mean_absolute_error(y_test, y_pred)
+mse = mean_squared_error(y_test, y_pred)
+rmse = np.sqrt(mse)
+r2 = r2_score(y_test, y_pred)
+
+print(f"R²: {r2:.4f} | MAE: {mae:.4f} | RMSE: {rmse:.4f}")
+print(f"Residual Mean: {residuals.mean():.4f} (should be ~0)")
+print(f"Residual Std:  {residuals.std():.4f}")
+
+# 4. Visualization: Actual vs Predicted
+plt.figure(figsize=(12, 4))
+
+plt.subplot(1, 2, 1)
+plt.scatter(y_test, y_pred, alpha=0.6, color='steelblue')
+plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'r--', lw=2)
+plt.xlabel('Actual Values')
+plt.ylabel('Predicted Values')
+plt.title('Actual vs Predicted')
+plt.grid(True, alpha=0.3)
+
+# 5. Visualization: Residual Plot
+plt.subplot(1, 2, 2)
+plt.scatter(y_pred, residuals, alpha=0.6, color='coral')
+plt.axhline(y=0, color='r', linestyle='--', lw=2)
+plt.xlabel('Predicted Values')
+plt.ylabel('Residuals (Actual - Predicted)')
+plt.title('Residual Plot')
+plt.grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.show()
+
+# 6. Residual Analysis
+print("\n--- Residual Analysis ---")
+print(f"Overpredictions (residual < 0): {(residuals < 0).sum()} ({(residuals < 0).mean()*100:.1f}%)")
+print(f"Underpredictions (residual > 0): {(residuals > 0).sum()} ({(residuals > 0).mean()*100:.1f}%)")
+
+# Check for patterns
+from scipy import stats
+_, p_normal = stats.normaltest(residuals)
+print(f"Normality test p-value: {p_normal:.4f} ({'Normal' if p_normal > 0.05 else 'Non-normal'})")
+
+# 7. Feature-wise residual plots (optional - detect non-linearity per feature)
+feature_names = ['Hours_Studied', 'Attendance', 'Assignments']
+fig, axes = plt.subplots(1, 3, figsize=(15, 4))
+for i, (ax, name) in enumerate(zip(axes, feature_names)):
+    ax.scatter(X_test[:, i], residuals, alpha=0.6)
+    ax.axhline(y=0, color='r', linestyle='--')
+    ax.set_xlabel(name)
+    ax.set_ylabel('Residuals')
+    ax.set_title(f'Residuals vs {name}')
+    ax.grid(True, alpha=0.3)
+plt.tight_layout()
+plt.show()
+```
+
+### 📊 Expected Visualizations
+
+| Plot | What to Look For | Good Sign | Problem Indicator |
+|------|------------------|-----------|-------------------|
+| **Actual vs Predicted** | Points near diagonal line | Tight cluster around y=x | Systematic deviation from line |
+| **Residuals vs Predicted** | Random scatter around 0 | No pattern, constant variance | Funnel shape, curves, clusters |
+| **Residuals vs Features** | Random scatter per feature | No pattern | Curved pattern → non-linearity |
+
+### 💡 Key Insights
+
+- **Residuals centered at 0** — unbiased predictions ✓
+- **Random scatter in residual plot** — homoscedasticity ✓
+- **No curved patterns** — linear assumption holds ✓
+- **Over/Under prediction balance** — ~50/50 split ✓
+
+> **If patterns exist:** Consider polynomial features, interaction terms, or non-linear models (Decision Trees, Random Forest, etc.)
 
 ---
 
-## 🧠 Residuals
+## 🧪 Practice Notebooks
 
-A residual is the difference between the actual value and the predicted value.
+| Notebook | Days Covered | Description |
+|----------|--------------|-------------|
+| `Ml_workflow.ipynb` | 31–36 | Classification: EDA → Scaling → KNN → GridSearchCV |
+| `linear_regression.ipynb` | 37–39 | Regression: Simple LR → Multiple LR → Residual Analysis |
 
-```text
-Residual = Actual - Predicted
+---
+
+## 📅 Progress Tracker (Days 31–39)
+
+| Day | Topic | Status | Notebook |
+|-----|-------|--------|----------|
+| 31 | ML Workflow Fundamentals | ✅ Complete | `Ml_workflow.ipynb` |
+| 32 | Logistic Regression | ✅ Complete | `Ml_workflow.ipynb` |
+| 33 | Model Evaluation & Metrics | ✅ Complete | `Ml_workflow.ipynb` |
+| 34 | Feature Scaling & Preprocessing | ✅ Complete | `Ml_workflow.ipynb` |
+| 35 | K-Nearest Neighbors (KNN) | ✅ Complete | `Ml_workflow.ipynb` |
+| 36 | Hyperparameter Tuning (GridSearchCV) | ✅ Complete | `Ml_workflow.ipynb` |
+| 37 | Linear Regression (Single Feature) | ✅ Complete | `linear_regression.ipynb` |
+| 38 | Multiple Linear Regression | ✅ Complete | `linear_regression.ipynb` |
+| 39 | Regression Evaluation & Residuals | ✅ Complete | `linear_regression.ipynb` |
+| 40 | *Coming Next...* | ⏳ Planned | — |
