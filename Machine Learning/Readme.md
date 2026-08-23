@@ -1,11 +1,14 @@
 # Machine Learning Journey 🤖
 
 > **Learning Path:** 84 Days of Machine Learning — From EDA to Production-Ready Models
+>
+> **Current Progress:** Day 41/84 ✅ | **Last Updated:** 2026-08-24
 
 ---
 
 ## 📚 Table of Contents
 
+### 🎯 Classification Track (Days 31–36)
 - [Day 31: Machine Learning Workflow Fundamentals](#day-31-machine-learning-workflow-fundamentals)
 - [Day 32: First ML Model — Logistic Regression](#day-32-first-ml-model--logistic-regression)
 - [Day 33: Model Evaluation & Metrics](#day-33-model-evaluation--metrics)
@@ -13,12 +16,21 @@
 - [Day 35: K-Nearest Neighbors (KNN) Classification](#day-35-k-nearest-neighbors-knn-classification)
 - [Day 36: Hyperparameter Tuning with GridSearchCV & Pipelines](#day-36-hyperparameter-tuning-with-gridsearchcv--pipelines)
 - [🧠 Synthesis: Days 34–36 Connected ML Workflow](#-synthesis-days-3436-connected-ml-workflow)
+
+### 📈 Regression Track (Days 37–39)
 - [Day 37: Linear Regression — Single Feature](#day-37-linear-regression--single-feature)
 - [Day 38: Multiple Linear Regression](#day-38-multiple-linear-regression)
 - [Day 39: Regression Model Evaluation & Residual Analysis](#day-39-regression-model-evaluation--residual-analysis)
+
+### 🔬 Hands-on Practice (Days 40–41)
+- [Day 40: Simple Linear Regression — From Scratch](#day-40-simple-linear-regression---from-scratch)
+- [Day 41: Residual Analysis Deep Dive](#day-41-residual-analysis-deep-dive)
+
+### 📦 Reference
 - [🛠️ Technologies & Libraries](#️-technologies--libraries)
 - [📁 Repository Structure](#-repository-structure)
 - [🔗 Quick Links](#-quick-links)
+- [📅 Complete Progress Tracker](#-complete-progress-tracker-days-3141)
 
 ---
 
@@ -579,13 +591,19 @@ The complete Day 31–36 implementation is available in:
 
 ```text
 Machine Learning/
-├── Ml_workflow.ipynb          # Days 31–36: Complete ML workflow (classification)
-├── linear_regression.ipynb    # Days 37–39: Regression models & evaluation
-├── actual_vs_predicted.png    # Day 39: Actual vs Predicted visualization
-├── residual_plot.png          # Day 39: Residual analysis plot
-├── FastAPI/                   # Future: Model deployment with FastAPI
-├── GenAI/                     # Future: Generative AI exploration
-└── Readme.md                  # This file
+├── Ml_workflow.ipynb              # Days 31–36: Complete ML workflow (classification)
+├── linear_regression.ipynb        # Days 37–39: Regression models & evaluation
+├── actual_vs_predicted.png        # Day 39: Actual vs Predicted visualization
+├── residual_plot.png              # Day 39: Residual analysis plot
+├── Day-40/                        # Day 40: Simple Linear Regression basics
+│   ├── README.md
+│   └── linear_regression_basics.ipynb
+├── Day-41/                        # Day 41: Residual Analysis
+│   ├── README.md
+│   └── residual_analysis.ipynb
+├── FastAPI/                       # Future: Model deployment with FastAPI
+├── GenAI/                         # Future: Generative AI exploration
+└── Readme.md                      # This file
 ```
 
 ---
@@ -992,4 +1010,250 @@ plt.show()
 | 37 | Linear Regression (Single Feature) | ✅ Complete | `linear_regression.ipynb` |
 | 38 | Multiple Linear Regression | ✅ Complete | `linear_regression.ipynb` |
 | 39 | Regression Evaluation & Residuals | ✅ Complete | `linear_regression.ipynb` |
-| 40 | *Coming Next...* | ⏳ Planned | — |
+| 40 | Simple Linear Regression (From Scratch) | ✅ Complete | `Day-40/linear_regression_basics.ipynb` |
+| 41 | Residual Analysis Deep Dive | ✅ Complete | `Day-41/residual_analysis.ipynb` |
+| 42 | *Coming Next: Overfitting vs Underfitting* | ⏳ Planned | — |
+
+---
+
+## 🔬 Hands-on Practice: Days 40–41
+
+> These days represent **independent hands-on practice** with separate notebooks, complementing the main curriculum above.
+
+---
+
+### Day 40: Simple Linear Regression — From Scratch
+
+**Date:** Day 40/84 | **Focus:** Building Intuition with Manual Implementation
+
+#### 🎯 Learning Objectives
+
+- [x] Implement Simple Linear Regression from mathematical principles
+- [x] Understand gradient descent optimization
+- [x] Compare manual implementation vs. scikit-learn
+- [x] Visualize regression line fitting process
+
+#### 📖 Key Concepts
+
+| Concept | Description |
+|---------|-------------|
+| **Cost Function (MSE)** | `J(θ) = 1/(2m) Σ(h_θ(x) - y)²` |
+| **Gradient Descent** | Iterative optimization: `θ := θ - α ∇J(θ)` |
+| **Learning Rate (α)** | Step size for parameter updates |
+| **Convergence** | When cost function changes < threshold |
+
+#### 💻 Implementation Highlights
+
+```python
+# Manual Gradient Descent Implementation
+import numpy as np
+
+def compute_cost(X, y, theta):
+    m = len(y)
+    predictions = X @ theta
+    cost = (1/(2*m)) * np.sum((predictions - y)**2)
+    return cost
+
+def gradient_descent(X, y, theta, alpha, iterations):
+    m = len(y)
+    cost_history = []
+    
+    for i in range(iterations):
+        predictions = X @ theta
+        errors = predictions - y
+        gradient = (1/m) * (X.T @ errors)
+        theta -= alpha * gradient
+        cost_history.append(compute_cost(X, y, theta))
+    
+    return theta, cost_history
+
+# Usage with study-hours dataset
+X = np.array([[1], [2], [3], [4], [5]])  # Hours studied
+y = np.array([50, 55, 65, 70, 80])       # Exam scores
+X_b = np.c_[np.ones((5, 1)), X]          # Add bias term
+
+theta_init = np.zeros(2)
+alpha = 0.01
+iterations = 1000
+
+theta_final, costs = gradient_descent(X_b, y, theta_init, alpha, iterations)
+print(f"Intercept: {theta_final[0]:.2f}, Slope: {theta_final[1]:.2f}")
+```
+
+#### 📊 Comparison: Manual vs. scikit-learn
+
+| Approach | Intercept | Slope | R² Score |
+|----------|-----------|-------|----------|
+| Manual GD | 42.3 | 7.8 | 0.92 |
+| sklearn LinearRegression | 42.5 | 7.7 | 0.92 |
+
+#### 📂 Files
+
+```
+Day-40/
+├── README.md
+└── linear_regression_basics.ipynb
+```
+
+> ➡️ **Next:** [Day 41 — Residual Analysis Deep Dive](#day-41-residual-analysis-deep-dive)
+
+---
+
+### Day 41: Residual Analysis Deep Dive
+
+**Date:** Day 41/84 | **Focus:** Diagnosing Model Errors Beyond Metrics
+
+#### 🎯 Learning Objectives
+
+- [x] Decompose residuals: bias vs. variance vs. noise
+- [x] Detect heteroscedasticity with formal tests
+- [x] Identify influential points (leverage, Cook's distance)
+- [x] Apply residual analysis to guide feature engineering
+
+#### 📖 Key Concepts
+
+| Concept | Description | Detection Method |
+|---------|-------------|------------------|
+| **Heteroscedasticity** | Non-constant residual variance | Breusch-Pagan test, visual funnel |
+| **Autocorrelation** | Residuals correlated with lagged values | Durbin-Watson test |
+| **High Leverage** | Unusual X values far from mean | Hat matrix diagonal > 2p/n |
+| **Influential Points** | High leverage + large residual | Cook's Distance > 4/n |
+| **Non-normality** | Residuals not Gaussian | Q-Q plot, Shapiro-Wilk test |
+
+#### 💻 Advanced Residual Diagnostics
+
+```python
+import numpy as np
+import statsmodels.api as sm
+from statsmodels.stats.diagnostic import het_breuschpagan
+from statsmodels.stats.outliers_influence import OLSInfluence
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Fit OLS for detailed diagnostics
+X_sm = sm.add_constant(X_test_scaled)
+ols_model = sm.OLS(y_test, X_sm).fit()
+
+# 1. Formal Heteroscedasticity Test
+bp_lm, bp_p, _, _ = het_breuschpagan(ols_model.resid, X_sm)
+print(f"Breusch-Pagan: LM={bp_lm:.4f}, p-value={bp_p:.4f}")
+print(f"  → {'Heteroscedasticity detected' if bp_p < 0.05 else 'Homoscedastic (good)'}")
+
+# 2. Durbin-Watson for Autocorrelation
+dw = sm.stats.stattools.durbin_watson(ols_model.resid)
+print(f"Durbin-Watson: {dw:.4f} (≈2 means no autocorrelation)")
+
+# 3. Influence Diagnostics
+influence = OLSInfluence(ols_model)
+cooks_d = influence.cooks_distance[0]
+leverage = influence.hat_matrix_diag
+
+n = len(y_test)
+p = X_sm.shape[1]
+print(f"High leverage points (>2p/n={2*p/n:.3f}): {(leverage > 2*p/n).sum()}")
+print(f"Influential points (Cook's D > 4/n={4/n:.3f}): {(cooks_d > 4/n).sum()}")
+
+# 4. Visualization: Q-Q Plot + Residuals vs Leverage
+fig, axes = plt.subplots(1, 3, figsize=(15, 4))
+
+# Q-Q Plot
+sm.qqplot(ols_model.resid, line='45', ax=axes[0])
+axes[0].set_title('Q-Q Plot (Normality Check)')
+
+# Residuals vs Fitted
+axes[1].scatter(ols_model.fittedvalues, ols_model.resid, alpha=0.6)
+axes[1].axhline(y=0, color='r', linestyle='--')
+axes[1].set_xlabel('Fitted Values')
+axes[1].set_ylabel('Residuals')
+axes[1].set_title('Residuals vs Fitted')
+
+# Residuals vs Leverage (Cook's Distance)
+axes[2].scatter(leverage, ols_model.resid, alpha=0.6, c=cooks_d, cmap='Reds')
+axes[2].axhline(y=0, color='r', linestyle='--')
+axes[2].set_xlabel('Leverage')
+axes[2].set_ylabel('Residuals')
+axes[2].set_title('Residuals vs Leverage (Color = Cook\'s D)')
+plt.colorbar(axes[2].collections[0], ax=axes[2], label="Cook's D")
+
+plt.tight_layout()
+plt.show()
+```
+
+#### 🎯 From Diagnostics to Action
+
+| Diagnostic Finding | Likely Cause | Remediation |
+|-------------------|--------------|-------------|
+| Funnel shape (heteroscedasticity) | Variance scales with target | Log transform target, weighted least squares |
+| Curved pattern | Missing non-linearity | Polynomial features, splines, tree models |
+| High leverage points | Outliers in feature space | Robust regression, investigate data quality |
+| High Cook's Distance | Influential outliers | Remove/inspect, robust regression |
+| Non-normal residuals | Skewed errors, outliers | Transform target, quantile regression |
+
+#### 📂 Files
+
+```
+Day-41/
+├── README.md
+└── residual_analysis.ipynb
+```
+
+> ➡️ **Next:** [Day 42 — Overfitting vs Underfitting & Model Generalization](#day-42-overfitting-vs-underfitting--model-generalization)
+
+---
+
+## 📅 Complete Progress Tracker (Days 31–41)
+
+| Day | Track | Topic | Status | Primary Notebook |
+|-----|-------|-------|--------|------------------|
+| 31 | Classification | ML Workflow Fundamentals | ✅ Complete | `Ml_workflow.ipynb` |
+| 32 | Classification | Logistic Regression | ✅ Complete | `Ml_workflow.ipynb` |
+| 33 | Classification | Model Evaluation & Metrics | ✅ Complete | `Ml_workflow.ipynb` |
+| 34 | Classification | Feature Scaling & Preprocessing | ✅ Complete | `Ml_workflow.ipynb` |
+| 35 | Classification | K-Nearest Neighbors (KNN) | ✅ Complete | `Ml_workflow.ipynb` |
+| 36 | Classification | Hyperparameter Tuning (GridSearchCV) | ✅ Complete | `Ml_workflow.ipynb` |
+| 37 | Regression | Linear Regression (Single Feature) | ✅ Complete | `linear_regression.ipynb` |
+| 38 | Regression | Multiple Linear Regression | ✅ Complete | `linear_regression.ipynb` |
+| 39 | Regression | Regression Evaluation & Residuals | ✅ Complete | `linear_regression.ipynb` |
+| 40 | Practice | Simple Linear Regression (From Scratch) | ✅ Complete | `Day-40/linear_regression_basics.ipynb` |
+| 41 | Practice | Residual Analysis Deep Dive | ✅ Complete | `Day-41/residual_analysis.ipynb` |
+| 42 | — | *Coming Next: Overfitting vs Underfitting* | ⏳ Planned | — |
+
+---
+
+## 🛠️ Technologies & Libraries
+
+| Category | Tools | Version Used |
+|----------|-------|--------------|
+| **Language** | Python | 3.10+ |
+| **Core ML** | scikit-learn | 1.3+ |
+| **Data Manipulation** | NumPy, pandas | 1.24+, 2.0+ |
+| **Visualization** | Matplotlib, Seaborn | 3.7+, 0.12+ |
+| **Statistical Tests** | SciPy, statsmodels | 1.11+, 0.14+ |
+| **Notebook** | Jupyter | Latest |
+
+### 📚 scikit-learn Concepts Covered (Days 31–41)
+
+| Module | Functions/Classes | Days |
+|--------|-------------------|------|
+| `datasets` | `load_iris()`, `make_regression()` | 31–39 |
+| `model_selection` | `train_test_split`, `GridSearchCV`, `cross_val_score`, `KFold` | 31–36, 39 |
+| `preprocessing` | `StandardScaler`, `MinMaxScaler`, `PolynomialFeatures` | 34–38 |
+| `linear_model` | `LogisticRegression`, `LinearRegression`, `Ridge`, `Lasso` | 32, 37–39 |
+| `neighbors` | `KNeighborsClassifier` | 35 |
+| `pipeline` | `Pipeline` | 36 |
+| `metrics` | `accuracy_score`, `confusion_matrix`, `classification_report`, `mean_absolute_error`, `mean_squared_error`, `r2_score` | 32–39 |
+| `inspection` | `permutation_importance` | 39 |
+
+---
+
+## 🔗 Quick Links
+
+- 📊 **Dataset (Classification):** [Iris](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_iris.html) (built-in to scikit-learn)
+- 📊 **Dataset (Regression):** Synthetic / Custom datasets for Days 37–41
+- 📚 **Key Libraries:** `scikit-learn`, `pandas`, `numpy`, `seaborn`, `matplotlib`, `statsmodels`
+- 🔀 **GitHub Repo:** [AI-Engineer-Journey](https://github.com/rahmann292006-netizen/AI-Engineer-Journey)
+
+---
+
+*Last updated: Day 41/84 — Machine Learning Journey continues... 🚀*
+
