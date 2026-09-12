@@ -2,7 +2,7 @@
 
 > **Learning Path:** 84 Days of Machine Learning — From EDA to Production-Ready Models
 >
-> **Current Progress:** Day 41/84 ✅ | **Last Updated:** 2026-08-24
+> **Current Progress:** Day 45/84 ✅ | **Last Updated:** 2026-09-12
 
 ---
 
@@ -22,15 +22,19 @@
 - [Day 38: Multiple Linear Regression](#day-38-multiple-linear-regression)
 - [Day 39: Regression Model Evaluation & Residual Analysis](#day-39-regression-model-evaluation--residual-analysis)
 
-### 🔬 Hands-on Practice (Days 40–41)
+### 🔬 Hands-on Practice (Days 40–45)
 - [Day 40: Simple Linear Regression — From Scratch](#day-40-simple-linear-regression---from-scratch)
 - [Day 41: Residual Analysis Deep Dive](#day-41-residual-analysis-deep-dive)
+- [Day 42: Overfitting vs Underfitting](#day-42-overfitting-vs-underfitting)
+- [Day 43: Cross-Validation](#day-43-cross-validation)
+- [Day 44: Regularization — Ridge & Lasso](#day-44-regularization--ridge--lasso)
+- [Day 45: Model Selection](#day-45-model-selection)
 
 ### 📦 Reference
 - [🛠️ Technologies & Libraries](#️-technologies--libraries)
 - [📁 Repository Structure](#-repository-structure)
 - [🔗 Quick Links](#-quick-links)
-- [📅 Complete Progress Tracker](#-complete-progress-tracker-days-3141)
+- [📅 Complete Progress Tracker](#-complete-progress-tracker-days-3145)
 
 ---
 
@@ -1197,12 +1201,13 @@ except ImportError:
 
 | Notebook | Days Covered | Description |
 |----------|--------------|-------------|
-| `Ml_workflow.ipynb` | 31–36 | Classification: EDA → Scaling → KNN → GridSearchCV |
-| `linear_regression.ipynb` | 37–39 | Regression: Simple LR → Multiple LR → Residual Analysis |
+| `Ml_workflow.ipynb` | 31–40, 42–44 | Classification, Regression, CV, Regularization — complete ML workflow |
+
+> **Note:** Days 41 and 45 are completed but their notebooks are not in the repository. `linear_regression.ipynb`, `Day-40/`, and `Day-41/` folders referenced in earlier versions do not exist.
 
 ---
 
-## 📅 Progress Tracker (Days 31–39)
+## 📅 Progress Tracker (Days 31–45)
 
 | Day | Topic | Status | Notebook |
 |-----|-------|--------|----------|
@@ -1212,18 +1217,21 @@ except ImportError:
 | 34 | Feature Scaling & Preprocessing | ✅ Complete | `Ml_workflow.ipynb` |
 | 35 | K-Nearest Neighbors (KNN) | ✅ Complete | `Ml_workflow.ipynb` |
 | 36 | Hyperparameter Tuning (GridSearchCV) | ✅ Complete | `Ml_workflow.ipynb` |
-| 37 | Linear Regression (Single Feature) | ✅ Complete | `linear_regression.ipynb` |
-| 38 | Multiple Linear Regression | ✅ Complete | `linear_regression.ipynb` |
-| 39 | Regression Evaluation & Residuals | ✅ Complete | `linear_regression.ipynb` |
-| 40 | Simple Linear Regression (From Scratch) | ✅ Complete | `Day-40/linear_regression_basics.ipynb` |
-| 41 | Residual Analysis Deep Dive | ✅ Complete | `Day-41/residual_analysis.ipynb` |
-| 42 | *Coming Next: Overfitting vs Underfitting* | ⏳ Planned | — |
+| 37 | Linear Regression (Single Feature) | ✅ Complete | `Ml_workflow.ipynb` |
+| 38 | Multiple Linear Regression | ✅ Complete | `Ml_workflow.ipynb` |
+| 39 | Regression Evaluation & Residuals | ✅ Complete | `Ml_workflow.ipynb` |
+| 40 | Simple Linear Regression (From Scratch) | ✅ Complete | `Ml_workflow.ipynb` |
+| 41 | Residual Analysis Deep Dive | ✅ Complete | *(notebook not in repo)* |
+| 42 | Overfitting vs Underfitting | ✅ Complete | `Ml_workflow.ipynb` |
+| 43 | Cross-Validation | ✅ Complete | `Ml_workflow.ipynb` |
+| 44 | Regularization — Ridge & Lasso | ✅ Complete | `Ml_workflow.ipynb` |
+| 45 | Model Selection | ✅ Complete | *(notebook not in repo)* |
 
 ---
 
-## 🔬 Hands-on Practice: Days 40–41
+## 🔬 Hands-on Practice: Days 40–45
 
-> These days represent **independent hands-on practice** with separate notebooks, complementing the main curriculum above.
+> These days represent **independent hands-on practice** with separate notebooks, complementing the main curriculum above. Days 42–44 are also implemented in `Ml_workflow.ipynb`; Days 41 and 45 are completed but their notebooks are not in the repository.
 
 ---
 
@@ -1402,30 +1410,283 @@ Day-41/
 └── residual_analysis.ipynb
 ```
 
-> ➡️ **Next:** [Day 42 — Overfitting vs Underfitting & Model Generalization](#day-42-overfitting-vs-underfitting--model-generalization)
+> ➡️ **Next:** [Day 42 — Overfitting vs Underfitting](#day-42-overfitting-vs-underfitting)
 
 ---
 
-## 📅 Complete Progress Tracker (Days 31–41)
+### Day 42: Overfitting vs Underfitting
 
-| Day | Track | Topic | Status | Primary Notebook |
-|-----|-------|-------|--------|------------------|
-| 31 | Classification | ML Workflow Fundamentals | ✅ Complete | `Ml_workflow.ipynb` |
-| 32 | Classification | Logistic Regression | ✅ Complete | `Ml_workflow.ipynb` |
-| 33 | Classification | Model Evaluation & Metrics | ✅ Complete | `Ml_workflow.ipynb` |
-| 34 | Classification | Feature Scaling & Preprocessing | ✅ Complete | `Ml_workflow.ipynb` |
-| 35 | Classification | K-Nearest Neighbors (KNN) | ✅ Complete | `Ml_workflow.ipynb` |
-| 36 | Classification | Hyperparameter Tuning (GridSearchCV) | ✅ Complete | `Ml_workflow.ipynb` |
-| 37 | Regression | Linear Regression (Single Feature) | ✅ Complete | `linear_regression.ipynb` |
-| 38 | Regression | Multiple Linear Regression | ✅ Complete | `linear_regression.ipynb` |
-| 39 | Regression | Regression Evaluation & Residuals | ✅ Complete | `linear_regression.ipynb` |
-| 40 | Practice | Simple Linear Regression (From Scratch) | ✅ Complete | `Day-40/linear_regression_basics.ipynb` |
-| 41 | Practice | Residual Analysis Deep Dive | ✅ Complete | `Day-41/residual_analysis.ipynb` |
-| 42 | — | *Coming Next: Overfitting vs Underfitting* | ⏳ Planned | — |
+**Date:** Day 42/84 | **Focus:** Model Complexity, Bias-Variance Tradeoff, Generalization
+
+#### 🎯 Learning Objectives
+
+- [x] Distinguish underfitting (high bias) from overfitting (high variance)
+- [x] Visualize train-test performance gap across model complexities
+- [x] Use polynomial degree as a complexity knob
+- [x] Understand the goal: generalization to unseen data
+
+#### 📖 Key Concepts
+
+| Concept | Description | Indicator |
+|---------|-------------|-----------|
+| **Underfitting** | Model too simple for data pattern | Poor train & test scores |
+| **Overfitting** | Model memorizes noise | High train score, low test score |
+| **Generalization** | Performance on unseen data | Test score ≈ Train score |
+| **Bias-Variance Tradeoff** | Balance between model simplicity and flexibility | Minimize total error |
+
+#### 🧪 Hands-on Practice (Polynomial Regression)
+
+```python
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LinearRegression
+from sklearn.pipeline import Pipeline
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import r2_score, mean_squared_error
+import numpy as np
+
+np.random.seed(42)
+n = 100
+X = np.sort(5 * np.random.rand(n, 1), axis=0)
+y = 2.5 * X.ravel() - 1.2 * X.ravel()**2 + np.random.randn(n) * 2
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+degrees = [1, 2, 5, 10, 15]
+for d in degrees:
+    model = Pipeline([
+        ('poly', PolynomialFeatures(degree=d)),
+        ('linear', LinearRegression())
+    ])
+    model.fit(X_train, y_train)
+    train_r2 = r2_score(y_train, model.predict(X_train))
+    test_r2 = r2_score(y_test, model.predict(X_test))
+    print(f"Degree {d:2d}: Train R²={train_r2:.3f}, Test R²={test_r2:.3f}, Gap={train_r2-test_r2:.3f}")
+```
+
+**Typical Results:**
+- Degree 1: Underfitting (linear model can't capture quadratic pattern)
+- Degree 2: Good fit (matches true quadratic relationship)
+- Degree 5+: Overfitting (train R² → 1.0, test R² drops significantly)
+
+#### 💡 Key Takeaway
+
+> The optimal model complexity minimizes **test error**, not training error. Cross-validation (Day 43) provides a more reliable way to find this sweet spot.
+
+> ➡️ **Next:** [Day 43 — Cross-Validation](#day-43-cross-validation)
 
 ---
 
-## 🛠️ Technologies & Libraries
+### Day 43: Cross-Validation
+
+**Date:** Day 43/84 | **Focus:** Reliable Model Evaluation Beyond Single Train/Test Split
+
+#### 🎯 Learning Objectives
+
+- [x] Understand why single train/test split is unreliable
+- [x] Implement K-Fold Cross-Validation
+- [x] Use `cross_val_score` for efficient CV evaluation
+- [x] Interpret mean CV score and standard deviation
+
+#### 📖 Key Concepts
+
+| Concept | Description |
+|---------|-------------|
+| **K-Fold CV** | Split data into K folds; train on K-1, validate on 1; repeat K times |
+| **Stratified K-Fold** | Preserves class/target distribution in each fold |
+| **Mean CV Score** | Average performance across folds → expected generalization |
+| **Std of CV Scores** | Stability/consistency across folds → reliability |
+
+#### 🧪 Hands-on Practice
+
+```python
+from sklearn.model_selection import cross_val_score, KFold
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LinearRegression
+from sklearn.pipeline import Pipeline
+import numpy as np
+
+np.random.seed(42)
+n = 100
+X = np.sort(5 * np.random.rand(n, 1), axis=0)
+y = 2.5 * X.ravel() - 1.2 * X.ravel()**2 + np.random.randn(n) * 2
+
+cv = KFold(n_splits=5, shuffle=True, random_state=42)
+
+for d in [1, 2, 5, 10, 15]:
+    model = Pipeline([
+        ('poly', PolynomialFeatures(degree=d)),
+        ('linear', LinearRegression())
+    ])
+    scores = cross_val_score(model, X, y, cv=cv, scoring='r2')
+    print(f"Degree {d:2d}: Mean CV R² = {scores.mean():.3f} ± {scores.std():.3f}")
+```
+
+**Typical Results:**
+| Degree | Mean CV R² | Std Dev | Interpretation |
+|--------|-----------|---------|----------------|
+| 1 | ~0.45 | Low | Underfitting — consistently poor |
+| 2 | ~0.75 | Low | **Sweet spot** — best generalization |
+| 5 | ~0.70 | Medium | Starting to overfit |
+| 10 | ~0.55 | High | Severe overfitting — unstable |
+| 15 | ~0.30 | Very High | Extreme overfitting |
+
+#### 💡 Key Takeaway
+
+> **Cross-validation** tells you not just *how well* a model performs, but *how consistently* it performs across different data splits. Low mean + high std = unreliable model.
+
+> ➡️ **Next:** [Day 44 — Regularization: Ridge & Lasso](#day-44-regularization-ridge-lasso)
+
+---
+
+### Day 44: Regularization — Ridge & Lasso
+
+**Date:** Day 44/84 | **Focus:** Controlling Model Complexity with L1/L2 Penalties
+
+#### 🎯 Learning Objectives
+
+- [x] Understand why regularization prevents overfitting
+- [x] Distinguish Ridge (L2) from Lasso (L1) regularization
+- [x] Tune the `alpha` hyperparameter
+- [x] Use Lasso for feature selection (zero coefficients)
+
+#### 📖 Key Concepts
+
+| Regularization | Penalty | Effect | Use Case |
+|----------------|---------|--------|----------|
+| **Ridge (L2)** | `α Σ β²` | Shrinks coefficients toward zero | Multicollinearity, keep all features |
+| **Lasso (L1)** | `α Σ |β|` | Can shrink coefficients to **exactly zero** | Feature selection, sparse models |
+
+#### 🧪 Hands-on Practice
+
+```python
+from sklearn.linear_model import Ridge, Lasso, LinearRegression
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.pipeline import Pipeline
+from sklearn.model_selection import cross_val_score, KFold
+import numpy as np
+
+np.random.seed(42)
+n = 100
+X = np.sort(5 * np.random.rand(n, 1), axis=0)
+y = 2.5 * X.ravel() - 1.2 * X.ravel()**2 + np.random.randn(n) * 2
+
+X_poly = PolynomialFeatures(degree=15, include_bias=False).fit_transform(X)
+
+cv = KFold(n_splits=5, shuffle=True, random_state=42)
+
+lr = LinearRegression()
+print(f"LinearRegression: {cross_val_score(lr, X_poly, y, cv=cv, scoring='r2').mean():.3f}")
+
+for alpha in [0.01, 0.1, 1, 10, 100]:
+    ridge = Ridge(alpha=alpha)
+    scores = cross_val_score(ridge, X_poly, y, cv=cv, scoring='r2')
+    print(f"Ridge(α={alpha:5.2f}): Mean CV R² = {scores.mean():.3f} ± {scores.std():.3f}")
+
+for alpha in [0.001, 0.01, 0.1, 1, 10]:
+    lasso = Lasso(alpha=alpha, max_iter=10000)
+    scores = cross_val_score(lasso, X_poly, y, cv=cv, scoring='r2')
+    n_zero = np.sum(lasso.fit(X_poly, y).coef_ == 0)
+    print(f"Lasso(α={alpha:5.3f}): Mean CV R² = {scores.mean():.3f} ± {scores.std():.3f}, Zero coefs: {n_zero}")
+```
+
+#### 💡 Key Takeaway
+
+> **Regularization is not about making models more complex — it's about controlling unnecessary complexity.**
+>
+> - **Ridge** shrinks coefficients smoothly → use when you want to keep all features
+> - **Lasso** performs automatic feature selection → use when you suspect many features are irrelevant
+
+> ➡️ **Next:** [Day 45 — Model Selection](#day-45-model-selection)
+
+---
+
+### Day 45: Model Selection
+
+**Date:** Day 45/84 | **Focus:** Comparing Models, Practical Validation, Choosing the Best Model
+
+#### 🎯 Learning Objectives
+
+- [x] Compare multiple candidate models using cross-validation
+- [x] Evaluate models on held-out test set after selection
+- [x] Understand the nested CV principle (selection vs. evaluation)
+- [x] Make practical model selection decisions
+
+#### 📖 Key Concepts
+
+| Concept | Description |
+|---------|-------------|
+| **Model Selection** | Choosing among candidate models/hyperparameters |
+| **Selection Bias** | Optimizing on validation set contaminates it |
+| **Nested CV** | Inner loop for selection, outer loop for unbiased evaluation |
+| **Practical Validation** | Final evaluation on truly held-out test set |
+
+#### 🧪 Practical Model Comparison
+
+```python
+from sklearn.model_selection import cross_val_score, KFold, train_test_split
+from sklearn.linear_model import LinearRegression, Ridge, Lasso
+from sklearn.neighbors import KNeighborsRegressor
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.pipeline import Pipeline
+import numpy as np
+
+np.random.seed(42)
+n = 200
+X = np.sort(5 * np.random.rand(n, 1), axis=0)
+y = 2.5 * X.ravel() - 1.2 * X.ravel()**2 + np.random.randn(n) * 2
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+cv = KFold(n_splits=5, shuffle=True, random_state=42)
+
+models = {
+    "LinearRegression": LinearRegression(),
+    "Poly(2)+Ridge(1)": Pipeline([
+        ('poly', PolynomialFeatures(degree=2)),
+        ('ridge', Ridge(alpha=1))
+    ]),
+    "Poly(15)+Ridge(10)": Pipeline([
+        ('poly', PolynomialFeatures(degree=15)),
+        ('ridge', Ridge(alpha=10))
+    ]),
+    "KNN(k=5)": KNeighborsRegressor(n_neighbors=5),
+    "DecisionTree(max_depth=3)": DecisionTreeRegressor(max_depth=3, random_state=42),
+    "RandomForest(100)": RandomForestRegressor(n_estimators=100, random_state=42),
+}
+
+print("=== Cross-Validation Scores (5-Fold) ===")
+for name, model in models.items():
+    scores = cross_val_score(model, X_train, y_train, cv=cv, scoring='r2')
+    print(f"{name:25s}: Mean R² = {scores.mean():.3f} ± {scores.std():.3f}")
+
+print("\n=== Test Set Evaluation (Final) ===")
+best_model = max(models.items(), key=lambda x: cross_val_score(x[1], X_train, y_train, cv=cv, scoring='r2').mean())[1]
+best_model.fit(X_train, y_train)
+test_r2 = best_model.score(X_test, y_test)
+print(f"Best model test R²: {test_r2:.3f}")
+```
+
+#### 🎯 Model Selection Checklist
+
+- [ ] Define candidate models and hyperparameter grids
+- [ ] Use cross-validation (not single split) for comparison
+- [ ] Compare mean CV score ± std (prefer stable models)
+- [ ] Select best model based on CV performance
+- [ ] **Retrain on full training set** with best hyperparameters
+- [ ] Evaluate **once** on held-out test set
+- [ ] Report test performance with confidence intervals
+
+#### 💡 Key Takeaway
+
+> **Model selection is a process, not a single metric.** The goal is a model that generalizes — validated by nested CV or a clean hold-out test set after all selection decisions are finalized.
+
+> ➡️ **Next:** Day 46 — Deep Learning Fundamentals (Neural Networks, Backpropagation, PyTorch/TensorFlow)
+
+---
+
+## 📅 Complete Progress Tracker (Days 31–45)
 
 | Category | Tools | Version Used |
 |----------|-------|--------------|
@@ -1733,3 +1994,26 @@ Model selection and practical validation.
 ---
 
 **Day 44/84 🚀**
+# Machine Learning Journey
+
+My Machine Learning learning journey as part of my 84-Day AI Engineer Journey.
+
+## Progress
+
+| Day | Topic | Link |
+|---|---|---|
+| Day 31 | Machine Learning Workflow Fundamentals | [Open](./Ml_workflow.ipynb) |
+| Day 32 | First ML Model — Logistic Regression | [Open](./Ml_workflow.ipynb) |
+| Day 33 | Model Evaluation & Metrics | [Open](./Ml_workflow.ipynb) |
+| Day 34 | Feature Scaling & Preprocessing Pipeline | [Open](./Ml_workflow.ipynb) |
+| Day 35 | K-Nearest Neighbors (KNN) Classification | [Open](./Ml_workflow.ipynb) |
+| Day 36 | Hyperparameter Tuning with GridSearchCV & Pipelines | [Open](./Ml_workflow.ipynb) |
+| Day 37 | Linear Regression — Single Feature | [Open](./Ml_workflow.ipynb) |
+| Day 38 | Multiple Linear Regression | [Open](./Ml_workflow.ipynb) |
+| Day 39 | Regression Model Evaluation & Residual Analysis | [Open](./Ml_workflow.ipynb) |
+| Day 40 | Simple Linear Regression — From Scratch | [Open](./Ml_workflow.ipynb) |
+| Day 41 | Residual Analysis Deep Dive | [Open](./Ml_workflow.ipynb) |
+| Day 42 | Overfitting vs Underfitting | [Open](./Ml_workflow.ipynb) |
+| Day 43 | Cross-Validation | [Open](./Ml_workflow.ipynb) |
+| Day 44 | Regularization — Ridge & Lasso | [Open](./Ml_workflow.ipynb) |
+| Day 45 | Model Selection | [Open](./Ml_workflow.ipynb) |
