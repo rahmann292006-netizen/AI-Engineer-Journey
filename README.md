@@ -1,288 +1,132 @@
-# 🚀 AI Engineer Journey — 84 Days
+# AI Engineer Journey
 
-> **Learning things the hard way.**
+> A hands-on learning repository documenting my path from Python and data analysis to machine learning, deployment, and generative AI.
 
-This repository documents my 84-day journey toward becoming an AI Engineer.
+This is not a collection of tutorial notes alone. Each section contains experiments, notebooks, visualizations, and small projects built while learning the underlying concepts.
 
-Instead of only watching tutorials, I'm learning by **practicing, building, breaking things, and documenting what I learn every day.**
+## Current progress
 
----
+The journey is organised as an 84-day roadmap. The foundations in Python, data analysis, visualization, and exploratory data analysis are complete. **Machine learning fundamentals (Days 31–45) are complete** — covering classification, regression, model evaluation, cross-validation, regularization, and model selection.
 
-## 📊 Phase 1 — Python → Data Analysis → EDA
+| Phase | Focus | Status |
+| --- | --- | --- |
+| 1 | Python, data analysis, and EDA | Complete |
+| 2 | Machine learning fundamentals | **Complete (Days 31–45)** |
+| 3 | Deep learning | Planned |
+| 4 | MLOps and deployment | Planned |
+| 5 | Generative AI and LLMs | Planned |
 
-The first phase of my journey was focused on building a strong foundation in Python and learning how to actually work with data.
+## Machine Learning Progress: Days 31–45
 
-I started with NumPy and Pandas, then moved into visualization and Exploratory Data Analysis.
+### 🎯 Classification Track (Days 31–36)
+- **Day 31:** Machine Learning Workflow Fundamentals — train/test split, stratification, ML pipeline
+- **Day 32:** First ML Model — Logistic Regression — binary/multiclass classification, decision boundaries
+- **Day 33:** Model Evaluation & Metrics — accuracy, precision, recall, F1, confusion matrix, ROC-AUC
+- **Day 34:** Feature Scaling & Preprocessing Pipeline — StandardScaler, MinMaxScaler, Pipeline
+- **Day 35:** K-Nearest Neighbors (KNN) Classification — distance metrics, neighbor search, scaling impact
+- **Day 36:** Hyperparameter Tuning with GridSearchCV & Pipelines — parameter grids, cross-validated search
 
----
+### 📈 Regression Track (Days 37–39)
+- **Day 37:** Linear Regression — Single Feature — slope, intercept, R², residual basics
+- **Day 38:** Multiple Linear Regression — multiple features, coefficient interpretation, multicollinearity
+- **Day 39:** Regression Model Evaluation & Residual Analysis — MAE/MSE/RMSE/R², residual plots, diagnostics
 
-## 🔢 NumPy
+### 🔬 Hands-on Practice (Days 40–45)
+- **Day 40:** Simple Linear Regression — From Scratch — gradient descent, cost function, manual vs sklearn
+- **Day 41:** Residual Analysis Deep Dive — heteroscedasticity, autocorrelation, leverage, Cook's distance
+- **Day 42:** Overfitting vs Underfitting — polynomial complexity, bias-variance tradeoff, train-test gaps
+- **Day 43:** Cross-Validation — K-Fold, stratified CV, cross_val_score, model stability assessment
+- **Day 44:** Regularization — Ridge & Lasso — L1/L2 penalties, alpha tuning, coefficient shrinkage, feature selection
+- **Day 45:** Model Selection — comparing models, CV scores, generalization, practical validation
 
-### What I Practiced
+All ML work is implemented in `Machine Learning/Ml_workflow.ipynb`.
 
-- NumPy arrays
-- Array creation
-- Indexing & slicing
-- Boolean indexing
-- Array operations
-- Reshaping
-- Stacking
-- Splitting
-- Basic numerical operations
+## Explore the work
 
-### Goal
+| Area | What it covers | Start here |
+| --- | --- | --- |
+| NumPy | Arrays, indexing, reshaping, vectorised operations, and image manipulation | [Module notes](Numpy/README.md) |
+| Pandas | DataFrames, cleaning, selection, joins, and CSV workflows | [Module notes](Pandas/README.md) |
+| Matplotlib | Core plotting and visualisation practice | [Module notes](Matplotlib/README.md) |
+| EDA | Dataset inspection, cleaning, distributions, relationships, and outliers | [EDA guide](EDA/README.md) |
+| Machine learning | Classification, regression, cross-validation, regularization, model selection | [ML progress notes](Machine%20Learning/Readme.md) |
 
-Build enough NumPy understanding to work comfortably with numerical datasets before moving deeper into Data Science.
+### Featured notebooks and project
 
----
+- [NumPy hands-on practice](Numpy/numpy_hands_on.ipynb)
+- [Pandas basics](Pandas/pandas_basics.ipynb)
+- [Matplotlib practice](Matplotlib/matplotlib.ipynb)
+- [EDA workout](EDA/eda_final_workout.ipynb)
+- [Machine-learning workflow](Machine%20Learning/Ml_workflow.ipynb) — **Days 31–45 complete**
+- [Image Matrix Operations](Numpy/Projects/Image-Matrix-Operations/README.md) — a small NumPy and Pillow project for flipping, cropping, rotating, brightening, grayscaling, and inverting images.
 
-## 🐼 Pandas
+## Learning approach
 
-After NumPy, I moved into Pandas and started working with DataFrames.
-
-### Topics Practiced
-
-- DataFrame basics
-- `read_csv()`
-- `head()` / `tail()`
-- Selecting rows and columns
-- `loc`
-- `iloc`
-- Missing values
-- Sorting
-- Column operations
-- Merge
-- Join
-- Concat
-- Basic data manipulation
-
-This was the point where working with real datasets started becoming much easier.
-
----
-
-## 📊 Exploratory Data Analysis
-
-After learning the basics of Pandas and visualization, I started exploring datasets instead of just manipulating them.
-
-For EDA practice, I mainly worked with the **Iris dataset**.
-
-The goal wasn't just to create graphs — it was to learn how to ask questions about data and find patterns.
-
----
-
-### 📅 Day 26 — Univariate Analysis
-
-Started exploring individual variables.
-
-#### Practiced
-
-- Distribution analysis
-- Histograms
-- Feature statistics
-- Understanding individual feature behaviour
-- Basic visualization
-
-#### Key Takeaway
-
-> Before comparing variables, understand each variable individually.
-
----
-
-### 📅 Day 27 — Bivariate Analysis
-
-Moved from one variable to relationships between two variables.
-
-#### Practiced
-
-- Scatter plots
-- Feature relationships
-- Comparing numerical variables
-- Species-wise comparisons
-- Understanding trends between features
-
-This helped me move from:
-
-> **"What does this feature look like?"**
-
-to:
-
-> **"How does this feature relate to another one?"**
-
----
-
-### 📅 Day 28 — Multivariate Analysis
-
-Went beyond two variables and started looking at multiple features together.
-
-#### Practiced
-
-- Correlation analysis
-- Feature relationships
-- Species-wise comparisons
-- Multivariate visualization
-- Understanding relationships across multiple variables
-
-#### Key Takeaway
-
-> Real datasets rarely tell their story through one variable at a time.
-
----
-
-### 📅 Day 29 — Outlier Detection
-
-Next, I started looking for unusual values in the dataset.
-
-#### Practiced
-
-- Quartiles
-- IQR
-- Lower and upper bounds
-- Potential outlier detection
-- Boxplots
-- Feature-wise analysis
-
-#### IQR Method
+I use a simple cycle throughout the repository:
 
 ```text
-IQR = Q3 - Q1
-
-Lower Bound = Q1 - 1.5 × IQR
-
-Upper Bound = Q3 + 1.5 × IQR
+Learn a concept -> practise it in code -> apply it to data -> inspect the result -> document the takeaway
 ```
 
-#### Key Takeaway
+For example, the EDA work moves from checking data quality to understanding distributions, relationships, correlations, and unusual observations before modelling. The machine-learning work then builds on that foundation with reproducible training and evaluation workflows.
 
-> An outlier isn't automatically bad data. It could be a measurement error, data-entry mistake, rare observation, or a genuine unusual case. The important part is understanding the data before deciding what to do with it.
+## Tools
 
----
+- Python
+- Jupyter Notebook
+- NumPy and pandas
+- Matplotlib and Seaborn
+- scikit-learn
+- Pillow (PIL)
 
-### 📅 Day 30 — Data Cleaning & EDA Wrap-up
+## Run a notebook locally
 
-Day 30 was about putting everything together.
+1. Clone the repository and enter it.
+2. Create and activate a virtual environment.
+3. Install the libraries needed by the notebook you want to run.
+4. Start Jupyter:
 
-#### Practiced
+```bash
+jupyter notebook
+```
 
-- Dataset inspection
-- Missing-value checks
-- Duplicate detection
-- Removing duplicates
-- Data-type inspection
-- Descriptive statistics
-- Outlier detection
-- Correlation analysis
-- Species-wise comparisons
-- Final visualization
-- Building a complete EDA workflow
+The notebooks use a mixture of included CSV files, built-in scikit-learn datasets, and small generated datasets. Read the notebook before running it to see its specific dependencies and data source.
 
-#### Final EDA Workflow
+## Repository layout
 
 ```text
-Raw Dataset
-     ↓
-Inspect
-     ↓
-Clean
-     ↓
-Understand distributions
-     ↓
-Find relationships
-     ↓
-Detect outliers
-     ↓
-Analyze correlations
-     ↓
-Compare groups
-     ↓
-Extract insights
-```
-
-#### Biggest Lesson
-
-> EDA isn't about making random charts until something looks interesting. It's about asking the right questions about the data.
-
----
-
-## 🧠 What I Learned from the EDA Phase
-
-The biggest shift for me wasn't learning another Pandas function — it was learning to look at a dataset and ask:
-
-- What is actually inside this data?
-- Are there missing values?
-- Are there duplicates?
-- What does each feature look like?
-- How are features related?
-- Are there unusual observations?
-- Do different groups behave differently?
-- What can I actually conclude from the data?
-
-This phase helped me move from simply handling data to **actually thinking about data**.
-
----
-
-## 🛠️ Tools & Technologies
-
-### 🐍 Core Language
-| Tool | Purpose | Version Used |
-|------|---------|--------------|
-| [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/) | Primary programming language for all data analysis and ML tasks | 3.10+ |
-
-### 📚 Data Science Libraries
-| Tool | Purpose | Key Features Used |
-|------|---------|-------------------|
-| [![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)](https://numpy.org/) | Numerical computing foundation | Arrays, broadcasting, vectorized operations, linear algebra |
-| [![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org/) | Data manipulation & analysis | DataFrames, I/O, grouping, merging, time series |
-| [![Matplotlib](https://img.shields.io/badge/Matplotlib-11557c?style=for-the-badge&logo=matplotlib&logoColor=white)](https://matplotlib.org/) | Static visualizations | Plots, subplots, customization, annotations |
-| [![Seaborn](https://img.shields.io/badge/Seaborn-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://seaborn.pydata.org/) | Statistical visualizations | Pair plots, heatmaps, categorical plots, distributions |
-| [![Scikit-learn](https://img.shields.io/badge/Scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/) | Machine learning | Preprocessing, model selection, metrics, pipelines |
-
-### 🛠️ Development Environment
-| Tool | Purpose |
-|------|---------|
-| [![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)](https://jupyter.org/) | Interactive notebooks for exploration & documentation |
-| [![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)](https://code.visualstudio.com/) | Primary IDE with Python/Jupyter extensions |
-| [![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/) | Version control & collaboration |
-
-### 📦 Package Management
-| Tool | Purpose |
-|------|---------|
-| [![pip](https://img.shields.io/badge/pip-3776AB?style=for-the-badge&logo=pypi&logoColor=white)](https://pypi.org/) | Python package installer |
-| [![conda](https://img.shields.io/badge/conda-44A833?style=for-the-badge&logo=anaconda&logoColor=white)](https://docs.conda.io/) | Environment & package management |
-
----
-
-## 📂 Repository Structure
-
-```
 AI-Engineer-Journey/
-├── Numpy/                 # NumPy hands-on practice
-├── Pandas/                # Pandas basics & data manipulation
-├── Matplotlib/            # Visualization practice & projects
-├── Machine Learning/      # ML workflows, FastAPI, GenAI
-├── *.csv                  # Datasets used for practice
-├── *.ipynb                # Jupyter notebooks for each phase
-└── README.md              # This file
+├── Numpy/                 # NumPy practice and an image-matrix project
+├── Pandas/                # Data manipulation practice
+├── Matplotlib/            # Plotting exercises and exported charts
+├── EDA/                   # Exploratory data-analysis notebook and guide
+├── Machine Learning/      # ML notebooks, diagnostics, FastAPI, and GenAI work
+├── *.csv                  # Practice datasets
+└── README.md
 ```
 
----
+## Technologies & Topics Learned So Far (Days 1–45)
 
-## 📈 Progress Tracking
+| Category | Topics |
+| --- | --- |
+| **Python & Data** | NumPy, pandas, Matplotlib, Seaborn, Jupyter |
+| **EDA** | Data cleaning, distributions, correlations, outliers, feature engineering basics |
+| **Classification** | Logistic Regression, KNN, GridSearchCV, Pipelines, evaluation metrics (precision, recall, F1, ROC-AUC) |
+| **Regression** | Simple & Multiple Linear Regression, residual analysis, heteroscedasticity, multicollinearity |
+| **Model Validation** | Train/test split, K-Fold CV, cross_val_score, bias-variance tradeoff |
+| **Regularization** | Ridge (L2), Lasso (L1), alpha tuning, coefficient shrinkage, feature selection |
+| **Model Selection** | Comparing models via CV, generalization assessment, practical validation |
 
-| Phase | Topic | Days | Status |
-|-------|-------|------|--------|
-| 1 | Python → Data Analysis → EDA | 1-30 | ✅ Complete |
-| 2 | Machine Learning Fundamentals | 31-50 | 🔄 In Progress |
-| 3 | Deep Learning | 51-65 | ⏳ Planned |
-| 4 | MLOps & Deployment | 66-75 | ⏳ Planned |
-| 5 | GenAI & LLMs | 76-84 | ⏳ Planned |
+## Current status
 
----
-
-## 🤝 Connect
-
-- **GitHub**: [@rahmann292006-netizen](https://github.com/rahmann292006-netizen)
-- **Repository**: [AI-Engineer-Journey](https://github.com/rahmann292006-netizen/AI-Engineer-Journey)
+✅ **Days 1–45 complete** (Python foundations → EDA → Machine Learning fundamentals)
+🔜 **Next:** Day 46 — Deep Learning fundamentals (neural networks, backpropagation, PyTorch/TensorFlow basics)
 
 ---
 
-> *"The best way to learn is to build. The best way to build is to start."*
+## Connect
+
+- GitHub: [@rahmann292006-netizen](https://github.com/rahmann292006-netizen)
+- Repository: [AI-Engineer-Journey](https://github.com/rahmann292006-netizen/AI-Engineer-Journey)
+
+> The best way to learn is to build, inspect what happened, and keep going.
