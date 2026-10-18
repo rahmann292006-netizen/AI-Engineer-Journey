@@ -8,6 +8,28 @@ Instead of only watching tutorials, I'm learning by **practicing, building, brea
 
 ---
 
+## 84-Day AI Engineer Journey — Retrospective
+
+I completed the 84-day, 12-week learning journey through a mix of study, project work, and implementation.
+
+### Journey milestones
+
+- Built a storytelling-style portfolio that presents the learning journey as an interactive experience.
+- Built **WeatherGPT**, a weather assistant project.
+- Attended **Smart India Hackathon (SIH)**.
+- Continued strengthening Python, data science, and machine learning fundamentals.
+- My last social media post was on **September 27**. Posting became less consistent while I focused on building projects and implementation.
+
+### Next phase
+
+- Strengthen Python, data science, and machine learning fundamentals.
+- Learn Generative AI and Agentic AI in greater depth.
+- Build practical projects and improve testing and deployment skills.
+- Practice data structures and algorithms (DSA).
+- Prepare for internships and entry-level roles.
+
+---
+
 ## 📊 Phase 1 — Python → Data Analysis → EDA
 
 The first phase of my journey was focused on building a strong foundation in Python and learning how to actually work with data.
